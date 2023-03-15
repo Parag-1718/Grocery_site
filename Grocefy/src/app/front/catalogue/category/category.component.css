@@ -1,0 +1,46 @@
+.a_style{
+    list-style-type: none;
+}
+
+.nav-item{
+    text-decoration: none;
+}
+
+.card-deck{
+    display: flex;
+}
+
+.cards-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+  .card img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  .card {
+    margin: 0 0.5em;
+    box-shadow: 2px 6px 8px 0 rgb(244, 244, 255);
+    border: none;
+    border-radius: 0;
+  }
+  .carousel-inner {
+    padding: 1em;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: #422c2c;
+    width: 5vh;
+    height: 5vh;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  @media (min-width: 768px) {
+    .card img {
+      height: 11em;
+    }
+  }
+
+  .card .i_w{
+    width: 100px;
+  }
