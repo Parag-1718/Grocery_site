@@ -1,0 +1,14 @@
+
+<div class="form-group">
+    <label for="categorySelect">Filter by category:</label>
+    <select class="form-control" id="categorySelect" (change)="slectedCetegory()" [(ngModel)]="getcategory" >
+      <option value="all" >All categories</option>
+      <option value="fruits">Fruits</option>
+      <option value="vegetables">Vegetables</option>
+      <option value="bakery&bread">Bakery and bread</option>
+      <option value="dairy&eggs">Dairy and Eggs</option>
+      <option value="meat&seafood">Meat and seafood</option>
+      <option value="beverages"> Beverages</option>
+      <option value="snacks&sweets">snacks and sweets</option>
+    </select>
+</div>

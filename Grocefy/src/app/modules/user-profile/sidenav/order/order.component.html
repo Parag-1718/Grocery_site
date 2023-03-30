@@ -1,0 +1,43 @@
+<p>order works!</p>
+<hr>
+
+<table>
+    <thead>
+      <tr>
+        <th>Order Number</th>
+        <th>Customer Name</th>
+        <th>Order Date</th>
+        <th>Order Total</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr class="order-row">
+          <td><%= order.orderNumber %></td>
+          <td><%= order.customerName %></td>
+          <td><%= order.orderDate %></td>
+          <td><%= order.orderTotal %></td>
+        </tr>
+        <tr class="order-details-row" style="display: none;">
+          <td colspan="4">
+            <table>
+              <thead>
+                <tr>
+                  <th>Product Name</th>
+                  <th>Quantity</th>
+                  <th>Price</th>
+                  <th>Subtotal</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td><%= detail.productName %></td>
+                    <td><%= detail.quantity %></td>
+                    <td><%= detail.price %></td>
+                    <td><%= detail.subtotal %></td>
+                  </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,29 @@
+.wraaper{
+    width: 20vh;
+}
+.bgImage img{
+    width: 95vw;
+    height: 20vh;
+    opacity: 5%;
+font-family: 'Roboto Condensed', sans-serif;
+}
+
+.bgImage p {
+    color:#d1e7dd ;
+}
+
+.sidenav ul{
+   list-style-type: none;
+   padding-left: 100px;
+}
+.sidenav ul li{
+    padding: 5px 0px;
+}
+.sidenav ul li a{
+    color: black;
+    text-decoration: none;
+    text-transform: capitalize;
+}
+.sidenav ul li a:hover{
+    color: rgb(123, 189, 243);
+}

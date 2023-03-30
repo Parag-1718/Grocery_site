@@ -1,0 +1,644 @@
+{
+  "seller": [
+    {
+      "name": "parmar parag",
+      "email": "parag1718@gmail.com",
+      "password": "parag333",
+      "id": 1
+    },
+    {
+      "name": "Lucifer",
+      "email": "luci123@gmail.com",
+      "password": "luci333",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "pName": "Fresh Potato, 1kg",
+      "pDescription": "High source of fibre\nGood source of Vitamin B6, C, Potassium, and Magnesium\nCan be used in multiple dishes and snacks\nStore at room temperature, away from direct sunlight\ningredients:Fresh potatoes\nmaterial_features:vegetarian\nitem_form:peeled\nmaterial_features:vegetarian",
+      "pPrice": 26,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/313dtY-LOEL.jpg",
+      "pCheck": true,
+      "id": 4
+    },
+    {
+      "pName": "Fresh Apple Royal Gala, pack of 4",
+      "pDescription": "Standard good quality specifications (130gm/pc)\nTaste fruity and sweet with light notes of tartness.\nitem_form:whole",
+      "pPrice": 192,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/81AK2aQ8VvL._SX679_.jpg",
+      "pCheck": true,
+      "id": 5
+    },
+    {
+      "pName": "Fresh mango,1kg",
+      "pDescription": "100% Carbide Free & Naturally Ripened\nRipe & bright yellow in color\nRich in Vitamin A, C, iron, folate and magnesium\nStore in cool and dry place\n100% Natural, Great in taste",
+      "pPrice": 213,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/41g30K50tCL._SX679_.jpg",
+      "pCheck": true,
+      "id": 6
+    },
+    {
+      "pName": "Fresh Banana Robusta, 1kg",
+      "pDescription": "Banana robusta\nGraded, sorted and quality fruits and vegetables\nFresh, hygienic and natural\nSemi tall variety with a very sweet taste and a good aroma\nThey contain lots of dietary fiber and are an excellent source of instant energy.\nOne banana supplies 30 percent of the daily vitamin B6 requirement and is rich in vitamin C, potassium and fiber.\ningredients:fresh banana\nitem_form:whole",
+      "pPrice": 213,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/51ebZJ+DR4L._SX679_.jpg",
+      "pCheck": true,
+      "id": 7
+    },
+    {
+      "pName": "Fresh Carrot - Orange, 500g Pack",
+      "pDescription": "Fresh, hygienic and natural\nGood source of Vitamin A,E,K, Potassium and Lycopene\nCan be used in curries, salad, soups and juices\nStore in cool and dry place, away from direct sunlight.\nitem_form:peeled\ningredients:fresh carrots\nnumber_of_pieces:1\nmaterial_features:vegetarian",
+      "pPrice": 23,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/311P1uv0ikL.jpg",
+      "pCheck": true,
+      "id": 8
+    },
+    {
+      "pName": "Fresh Tomato - Local, 1kg",
+      "pDescription": "100% Natural\nGood source of Vitamin A, C, K, Iron, Folate and Potassium\nHelp to reduce Cholesterol\nCan be used salads, soups and curries\nStore in a cool, dry place away from sunlight\ningredients:Fresh tomatoes\nmaterial_features:vegetarian\nitem_form:with stem",
+      "pPrice": 23,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/41L46kSwk7L._SX679_.jpg",
+      "pCheck": true,
+      "id": 9
+    },
+    {
+      "pName": "Fresh Cauliflower 1 piece, (400 - 600 g)",
+      "pDescription": "bout this item\nCauliflower is low in fat\nRich in Vitamin C, K, Potassium and Manganese\nCan be used with Potatoes or in soups, manchurian, salad and parathas.\nStore in a cool, dry place away from sunlight\ningredients:fresh cauliflower\nitem_form:with stem\nmaterial_features:vegetarian",
+      "pPrice": 34,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/51BomV2ZiaL._SX679_.jpg",
+      "pCheck": true,
+      "id": 10
+    },
+    {
+      "pName": "Fresh Bhendi, 500g",
+      "pDescription": "It tastes mild and slightly grassy\nExcellent source of potassium, calcium and prebiotic fiber\nUsed in curries, sambhar, can be stuffed or fried\nStore in cool and dry place, away from direct sunlight.\nnumber_of_pieces:1\ningredients:Fresh bhendi",
+      "pPrice": 50,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/51yvxGKCiYL._SX679_.jpg",
+      "pCheck": true,
+      "id": 11
+    },
+    {
+      "pName": "Fresh Cabbage, 1 Piece Pack (500gm-800gm)",
+      "pDescription": "1 pc pack\nIt is a good source of Vitamin K, Dietary Fiber, Calicum, Potassium and Phosphorus\nIt is also used in the preparation of dry curries, soups, manchurian or salads\nStore in cool and dry place, away from direct sunlight.\ningredients:fresh cabbage\nitem_form:whole\nmaterial_features:vegetarian",
+      "pPrice": 21,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/51vl9RzME3L._SX679_.jpg",
+      "pCheck": true,
+      "id": 12
+    },
+    {
+      "pName": "Fresh Brinjal Varikatri, 500g",
+      "pDescription": "It is low in calories and wealthy in dietary fiber\nGood Source of Thiamin and B6 and contains little measures of Vitamin E, Vitamin C, and Vitamin K\nCan be used in curries, soups, rice items or can be roasted or fried.\nStore in cool and dry place, away from direct sunlight.\nmaterial_features:vegetarian\nitem_form:thornless",
+      "pPrice": 23,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/81Dh6hf3ipL._SX679_.jpg",
+      "pCheck": true,
+      "id": 13
+    },
+    {
+      "pName": "Fresh Onion, 1kg",
+      "pDescription": "Rich in antioxidants\nGood source of manganese, copper, Vitamin B6, Vitamin C and Dietary Fibers\nCan be used in curries, snacks and salads\nStore at room temperature, away from direct sunlight\nmaterial_features:vegetarian\nitem_form:whole\ningredients:fresh onions",
+      "pPrice": 21,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/51v2ozMXy8L._SX679_.jpg",
+      "pCheck": true,
+      "id": 14
+    },
+    {
+      "pName": "Fresh Ginger, 100g",
+      "pDescription": "It is stacked with supplements and bioactive mixes\nGood source of Vitamin B6, C, Potassium, Manganese and Dietary Fiber\nCan be used to add taste to dishes or in teas\nStore in a cool, dry place away from sunlight\nnumber_of_pieces:1\ningredients:Fresh Ginger\nmaterial_features:vegetarian",
+      "pPrice": 17,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/61SCxbFGpWL._SX679_.jpg",
+      "pCheck": true,
+      "id": 15
+    },
+    {
+      "pName": "Fresh Beans Cluster, 250g",
+      "pDescription": "It very well may be overwhelmed by rice, chapatti, and dal\nRich in Vitamin A and C\nRich in Dietary Fiber and Protein\nStore in cool and dry place, away from direct sunlight.\nmaterial_features:vegetarian",
+      "pPrice": 21,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/613ma-8hO2L._SX679_.jpg",
+      "pCheck": true,
+      "id": 16
+    },
+    {
+      "pName": "Fresh Spring Onion, 250 g",
+      "pDescription": "No preservatives\nNo artificial flavour\nFresh, hygienic and natural",
+      "pPrice": 9,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/61zT+E0NOWL._SX679_.jpg",
+      "pCheck": true,
+      "id": 17
+    },
+    {
+      "pName": "Fresh Bottle Gourd - 1 Piece",
+      "pDescription": "Commonly known as Lauki\nGood source of Vitamin A, C, K, Dietary Fiber and Iron\nEspecially the bottle gourd or lauki juice is beneficial for weight loss\nStore in cool and dry place, away from direct sunlight.\nitem_form:whole\nmaterial_features:vegetarian\ningredients:fresh lauki",
+      "pPrice": 27,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/51mSuAwCtkL._SX679_.jpg",
+      "pCheck": true,
+      "id": 18
+    },
+    {
+      "pName": "Fresh Coriander, 100g",
+      "pDescription": "Commonly known as Dhania;Good source of Vitamin C, K, Iron, Manganes and Dietary Fiber.\nCan be used to in curries, soups or for garnishing\nStore in refrigerator at a temperature of 0-5 degree celsius\nallergen_information:dairy_free; ingredients:fresh corriander leaves\nMaterial Features: Vegetarian\nmaterial_features:vegetarian",
+      "pPrice": 15,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/71pbtRs3UQL._SX679_.jpg",
+      "pCheck": true,
+      "id": 19
+    },
+    {
+      "pName": "Fresh Methi, 250g",
+      "pDescription": "It has bitter taste and strong aroma\nGood source of Iron, Protein, Calcium and Dietary Fiber\nUsed to make daals and curries\nStore in refrigerator at a temperature of 0-5 degree celsius\nvariety:fenugreek\nmaterial_features:vegetarian\nitem_form:leaves",
+      "pPrice": 45,
+      "pCategory": "vegetables",
+      "pImage": "https://m.media-amazon.com/images/I/81iLjuHStgL._SX679_.jpg",
+      "pCheck": true,
+      "id": 20
+    },
+    {
+      "pName": "Fresh Pomegranate, 4 Pieces",
+      "pDescription": "Has sweet-tart taste with tangy, fruity\nGood Quality specifications (180gm/pc)\nRich supplier of soluble and insoluble dietary fibers, vitamin K, C, minerals and B-complex vitamins such as B5, B6",
+      "pPrice": 163,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/611a1wD9ZGL._SX679_.jpg",
+      "pCheck": true,
+      "id": 21
+    },
+    {
+      "pName": "Fresh Pear Green Imported, 4 Pieces",
+      "pDescription": "Good Quality specifications (140gm/piece)\nIt contains no cholesterol, no sodium, free from saturated fat, an excellent source of fiber and a good source of vitamin\nCrunchy and tart, but when fully ripe, has juicy, buttery texture & a sweet flavor\nmaterial_features:vegetarian",
+      "pPrice": 185,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/41YYLKLwOFL._SX679_.jpg",
+      "pCheck": true,
+      "id": 22
+    },
+    {
+      "pName": "Fresh Orange, Valencia, 4 Pcs",
+      "pDescription": "Valencia\nRich in taste\n100% Natural\nValencia\nRich in taste\n100% Natural\nPack contains 4 pieces\nitem_form:whole",
+      "pPrice": 98,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/41LwnkECZ2L.jpg",
+      "pCheck": true,
+      "id": 23
+    },
+    {
+      "pName": "Fresh Apple Red Delicious Imported, Pack of 4",
+      "pDescription": "Standard good quality specifications (130gm/pc)\nRich in vitamin C and dietary fiber which keep our digestive and immune system healthy\nStore them in a cool, dry place away from direct sunlight\nitem_form:whole",
+      "pPrice": 146,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/81aRkv2DltL._SX679_.jpg",
+      "pCheck": true,
+      "id": 24
+    },
+    {
+      "pName": "Fresh Pineapple, 1 pc (Approx. 800g-1000g)",
+      "pDescription": "Loosely fibrous and juicy with white to yellowish flesh\nGood Quality specifications (750gm)\nGreat source of vitamin C, vitamin B, and manganese\nitem_form:whole",
+      "pPrice": 76,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/81XA2GQIPOL._SY741_.jpg",
+      "pCheck": true,
+      "id": 25
+    },
+    {
+      "pName": "Fresh Watermelon Striped, 1 Piece (3-5 kg)",
+      "pDescription": "Contains vibrant pink-red flesh inside the fruit\nLow in calories and rich in anti-oxidants\nWatermelons have excellent hydrating properties with 90% water content\nWeight approx 3.5-5 Kg",
+      "pPrice": 102,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/61r5l3+Ml7L._SX679_.jpg",
+      "pCheck": true,
+      "id": 26
+    },
+    {
+      "pName": "Fresh Guava, 500 g",
+      "pDescription": "Fresh, hygienic and natural\nGuava is very popular fruit as it boosts energy in the body\nRich in Vitamins A,C, folate, fiber and lycopene.\nStore ripe guavas under refrigeration",
+      "pPrice": 54,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/41S4xXyjIzL.jpg",
+      "pCheck": true,
+      "id": 27
+    },
+    {
+      "pName": "Fresh Mosambi, 6 Pieces (800 to 1000 gm)",
+      "pDescription": "Mosambi is soft yellow colored, mildly sweet tasting\nGood Quality specifications (140gm/piece)\nThis wonderful fruit is rich in Vitamin C and Potassium\nMosambis act as natural coolants and have antiseptic properties\nStore in cool and dry place, away from direct sunlight.",
+      "pPrice": 75,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/61g9AUsMYmL._SX679_PIbundle-6,TopRight,0,0_SX679SY483SH20_.jpg",
+      "pCheck": true,
+      "id": 28
+    },
+    {
+      "pName": "Fresh Coconut - Medium 1Pc (450-500gm)",
+      "pDescription": "It can be used to prepare various delicious dishes\nIt is rich in dietary fiber\nCoconut can be dried for longer storage duration\nStore at room temperature, away from direct sunlight",
+      "pPrice": 29,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/61THuQWrAZL._SX679_.jpg",
+      "pCheck": true,
+      "id": 30
+    },
+    {
+      "pName": "Fresh Mango Raw, 500 g",
+      "pDescription": "100% Carbide Free\nExcellent source of Vitamin A and C\nCan be used to make chutney or pickle\nStore in a cool, dry place away from sunlight\n100% Carbide Free & Naturally Ripened",
+      "pPrice": 35,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/51ByzL4LRML._SX679_.jpg",
+      "pCheck": true,
+      "id": 31
+    },
+    {
+      "pName": "Amul Taaza Homogenised Toned Milk, 1L Tetra Pack",
+      "pDescription": "No need to boil\nCut open and drink\nNo need to refrigerate till open\nStays fresh for 2 days after opening if kept in refrigerator\nNo powder or water added\nNo preservative or chemical",
+      "pPrice": 69,
+      "pCategory": "dairy&eggs",
+      "pImage": "https://m.media-amazon.com/images/I/81kw33WzevL._SY741_.jpg",
+      "pCheck": true,
+      "id": 32
+    },
+    {
+      "pName": "So Good Almond Milk 1000 ml | Unsweetened | Lactose Free Milk | Gluten Free | Sugar Free | Vegan Milk | Non-Dairy | Plant Based Milk",
+      "pDescription": "HIGH IN CALCIUM AND VITAMINS- Rich source of Calcium and Vitamin B2, B12 and Vitamin D, it has proven benefits for strong bones and healthy skin. These Vitamins and nutrients can help support your Immune System and makes you feel healthy making So Good a great choice for you and your Family\nSUPER EASY TO DIGEST -So Good Almond Milk is a plant based, dairy free milk , that does not contain lactose nor Gluten which makes it super friendly for your digestive system.\nZERO PRESERVATIVES AND NO ADDED COLORS :-Almond Milk from So Good does not contain any preservative and has no added colours. Moreover, it can be stored in ambient conditions for 365 days and it comes in an Environment Friendly Packaging.",
+      "pPrice": 300,
+      "pCategory": "dairy&eggs",
+      "pImage": "https://m.media-amazon.com/images/I/61R5vEEZMrL._SX679_.jpg",
+      "pCheck": true,
+      "id": 33
+    },
+    {
+      "pName": "Nandini Good Life Toned Milk, 1L",
+      "pDescription": "Thick pure milk\nNeeds no boiling. Organic:No\nNo preservatives or chemicals used",
+      "pPrice": 56,
+      "pCategory": "dairy&eggs",
+      "pImage": "https://m.media-amazon.com/images/I/41+390a86aS.jpg",
+      "pCheck": true,
+      "id": 34
+    },
+    {
+      "pName": "The Laughing Cow Creamy Cheese Triangles | 5 Essential Vitamins, Mineral & Protein | Goodness of Cow's Milk | 24 Creamy Cheese Triangles | Pack of 3",
+      "pDescription": "World’s leading cheese brand loved by consumers since 1921.\nDelicious taste: So soft and creamy that it instantly melts in your mouth. The Creamy Cheese Triangles are the yummiest, creamiest addition to your snacking needs.\nNutritious: Fortified with nutrients and contains 5 essential Vitamins, Mineral and Protein. Made with the goodness of cow’s milk.\nEnjoy the Creamy Cheese Triangle as a spread on your bread, a delicious add-on to your cracker, or simply savour it just as you unwrap!\nCheck out our delicious range of creamy cheese slices, cubes, blocks, spreads and pizza cheese. Snacking, now made delicious and nutritious with The Laughing Cow cheese!",
+      "pPrice": 364,
+      "pCategory": "dairy&eggs",
+      "pImage": "https://m.media-amazon.com/images/I/61AcdxU41QL._SX679_.jpg",
+      "pCheck": true,
+      "id": 35
+    },
+    {
+      "pName": "Dlecta Cheese Slices Pouch, 200 g",
+      "pDescription": "100% Vegetarian\nMade from cow milk\nGreat ease and economy of usage\nMore cheese, less filler vs competing products\n",
+      "pPrice": 108,
+      "pCategory": "dairy&eggs",
+      "pImage": "https://m.media-amazon.com/images/I/61coqJ5vNkL._SX679_.jpg",
+      "pCheck": true,
+      "id": 36
+    },
+    {
+      "pName": "The Good Cow Co - Pure A2+ Artisan Unsalted White Butter - 100% Natural - Tasty & Delicious (White Butter 250 Gram)",
+      "pDescription": "White butter helps in the elasticity of skin and gives it a natural glow.\nA piping hot paratha drenched in a dollop of white butter is undeniably the most alluring amalgamation of taste and joy served in a platter.\nWould be surprised to know that desi makhan or homemade white butter can actually be a great substitute to your regular vegetable oils.\nWhite butter is pleasant to use, it has a creamy texture; it is very soft and melts easily.\nNo Added Flavours, No Preservatives.\nThe Good Cow Co White Butter has it's world wide reputation for the goodness and taste it holds.\nPackage Content: 250 Gram White Butter\nEnjoy the lovely flavor when added as a cooking condiment or just spread on a slice of multi-grain bread.",
+      "pPrice": 399,
+      "pCategory": "dairy&eggs",
+      "pImage": "https://m.media-amazon.com/images/I/41RUJH8dF6L._SX300_SY300_QL70_FMwebp_.jpg",
+      "pCheck": true,
+      "id": 37
+    },
+    {
+      "pName": "Amul Butter Pasteurised, 500 g",
+      "pDescription": "Spread on Bread, Parantha, Roti, Nans, Sandwiches\nTopping : Pav Bhaji, Dals, Soups, Salads, Rice\nCooking Medium : Butter Paneer Masala, Butter Corn Masala and thousands of delightful recipes\nPure vegetarian\nItem Form: Bar; Flavor Name: Salted\nflavor_name:salted\nitem_form:bar",
+      "pPrice": 266,
+      "pCategory": "dairy&eggs",
+      "pImage": "https://m.media-amazon.com/images/I/61vr7r8qqsL._SX679_.jpg",
+      "pCheck": true,
+      "id": 38
+    },
+    {
+      "pName": "PURAMIO Yogurt Powder (No Added Sugar), 300g",
+      "pDescription": "Adds yogurt's tart and tangy flavor without moisture\nBest part is that it is Low Fat which makes it healthy too\nThis bacteria free healthy prebiotic mix is a tasty snack or mid-meal option for your kid and everyone in the family\nJust add water and enjoy refreshing Yogurt anytime, anywhere",
+      "pPrice": 500,
+      "pCategory": "dairy&eggs",
+      "pImage": "https://m.media-amazon.com/images/I/41XS0h2fU+L._SY300_SX300_.jpg",
+      "pCheck": true,
+      "id": 39
+    },
+    {
+      "pName": "Fresh Eggs - 30 Pieces",
+      "pDescription": "It has high dietary content, protein, smell and rich taste\nThese are one of nature's most wholesome foods\nmaterial_features:non-vegetarian\ningredients:fresh eggs",
+      "pPrice": 199,
+      "pCategory": "dairy&eggs",
+      "pImage": "https://m.media-amazon.com/images/I/31tbuj9qMgL.jpg",
+      "pCheck": true,
+      "id": 40
+    },
+    {
+      "pName": "Wheafree Gluten Free Bread Mix 1 kg | Neutral Flavour| Quick and Easy to Bake | Sweet and Savoury Preparations | 100% Natural, Vegetarian and Gluten Free",
+      "pDescription": "BAKE FOUR 500G LOAVES – Using 250g of Wheafree Bread Mix, you can bake a 500g light-textured loaf with a crisp crust. With 1 kg of Bread Mix, we have provided you Dry Yeast and Xanthan Gum separately, divide them equally to bake four crusty loaves.\nEASY TO BAKE: Wheafree Bread Mix has made baking a bread easily possible at home. All you need are some simple ingredients and follow the instruction printed on the box. Enjoy the perfect loaf with your family - freshly baked with butter, with your favourite sandwich filling, toasted for breakfast or as a delicious dinner roll.\nSUITABLE FOR BOTH SWEET AND SAVOURY PREPARATIONS: With Wheafree Bread Mix you can bake a range of fresh bakery items and add a savoury or sweet touch to your dough. You can bake pizza base, garlic bread, banana bread, sweet buns, burgers etc with our Bread Mix.\nSHELF LIFE: 6 Months from the date of manufacturing",
+      "pPrice": 259,
+      "pCategory": "bakery&bread",
+      "pImage": "https://m.media-amazon.com/images/I/91T22uAM8QL._SX679_.jpg",
+      "pCheck": true,
+      "id": 41
+    },
+    {
+      "pName": "Urban Platter Everything Bagel Seasoning, 100g",
+      "pDescription": "verything Bagel seasoning is as the name says, all the spices, herbs and salts that go on to an Everything Bagel. The toasty, salty & savory flavors in this blend work together beautifully to make every bite a little different.\nA traditional recipe made with toasted sesame seeds, onion and garlic flakes and pink salt, this seasoning is sure to take you back to the aromas of your favorite bagel shop.\nUse it on everything from bread sticks, sandwiches, spreads, popcorn, roasted vegetables & more! Mix it into hummus & dips or coat your bread dough with this seasoning before baking. Tip: Goes exceptionally well on Avocado Toast\nUse this American Classic to bring out the right flavors from the beloved everything bagel onto any dish you create.\nUrban Platter - Simply Good Food! :)",
+      "pPrice": 250,
+      "pCategory": "bakery&bread",
+      "pImage": "https://m.media-amazon.com/images/I/71WnQ5p7dWL._SX679_.jpg",
+      "pCheck": true,
+      "id": 42
+    },
+    {
+      "pName": "Britannia Treat Croissant - with Cocoa Crème Filling (45g) - 100% VEG",
+      "pDescription": "An irresistible & drool worthy snack, ideal for those who like to snack on the go\nSoft, fluffy bun with multiple layers filled with delectable creme in the centre\nMade using hand picked finest ingredients for the ultimate taste & quality\nThe perfect snack to satisfy your mid day cravings or mid night hunger pangs\nBritannia Treat Croissant is 100% veg\nEnjoy the irresistible new temptation, available in three delicious flavours: Cocoa, Vanilla and Mixed Fruit",
+      "pPrice": 19,
+      "pCategory": "bakery&bread",
+      "pImage": "https://m.media-amazon.com/images/I/71s3Vi-JAPL._SX679_.jpg",
+      "pCheck": true,
+      "id": 43
+    },
+    {
+      "pName": "MATILDE VICENZI Grisbi Short Pastry Cookies Filled With Lemon Cream | GMO Free | No Preservatives & No Artifical Colours |Lemon Cream- 150gm(Pack of 2)",
+      "pDescription": "Shortbread treats filled with soft lemon cream, the joy of experiencing extreme tastes that excite the palate!\nContains wheat, whey powder, eggs, milk, butter, lemon juice. May contain traces of peanuts, nuts and soy\nGMO free, Halal, IFS, ISO and OU Kosher Dairy certified\nProduct made in Italy\nNo preservatives, artificial colours or hydrogenated fats",
+      "pPrice": 650,
+      "pCategory": "bakery&bread",
+      "pImage": "https://m.media-amazon.com/images/I/711eCrC71JL._SX679_PIbundle-2,TopRight,0,0_AA679SH20_.jpg",
+      "pCheck": true,
+      "id": 44
+    },
+    {
+      "pName": "MYFITNESS Chocolate Peanut Butter Crunchy 1250g",
+      "pDescription": "item weight: 1250.0 grams;Premium chocolate, Original American recipe, High protein, Low carbs, Rich in taste, Halal, Country of Origin: India\nPackage Weight: 2.755 pounds;Specialty: Vegetarian. Added Preservatives : No\ncolor map: Brown;color name: Brown\nitem form: Paste; flavor name: chocolate\nFlavor Name: Chocolate Crunchy\ncolor_map:Brown",
+      "pPrice": 549,
+      "pCategory": "bakery&bread",
+      "pImage": "https://m.media-amazon.com/images/I/61Sm13yXdsL._SX679_.jpg",
+      "pCheck": true,
+      "id": 45
+    },
+    {
+      "pName": "Aryaman Dried Beef Jerky Tenders (200 g) Adult Dog Treats, All Natural, High Protein, No Artificial Flavors and No Preservatives, 100% Made in India",
+      "pDescription": "SAVORY, SOFT, AND CHEWY- Slow-cooked to achieve a tender, tasty and chewy jerky intended for your companion. The best option for your dogs to chew on.\nHUMAN-GRADE: If you wouldn’t eat it, why would you feed it? Made from 100% Natural Beef, our treats meet standards fit for human consumption. No preservatives and artificial flavors added to bring out the natural flavors your pup will surely love.\nGRAIN-FREE AND CORN-FREE- Made from whole meat and guaranteed to be free from grains and corn. This is the perfect treat for adult dogs while training. No artificial fillers!\n100% NATURAL- While most Dog Treats are made with the addition of artificial flavours and preservatives. Ours is made with only 100% Beef, we dehydrate our meats for over 13 hrs to get them a natural shelf life and the perfect chewy texture\nHIGH-PROTEIN CONTENT- Aryaman Beef Jerky Tenders are an excellent addition to your dog’s protein needs. Apart from the numerous benefits our product offers, we believe that healthy treats are the best way of showing how much you love your dogs.",
+      "pPrice": 550,
+      "pCategory": "meat&seafood",
+      "pImage": "https://m.media-amazon.com/images/I/61oqU8yjs+L._SY679_.jpg",
+      "pCheck": true,
+      "id": 46
+    },
+    {
+      "pName": "Saoji Foods | Magic Chicken Curry Paste Masala 100g | Easiest Way To Cook Chicken Curry | Pack of 5 | Instant Gravy",
+      "pDescription": "Easy to Cook\nPerfect Taste: Perfect Saoji Taste For Your Chicken\nRich Aroma: Enjoy the rich aroma in every bite of it.\nPerfect Color: Gives A perfect color to your dish.\nNo preservatives, no added colours & no artificial flavours - our Magic Paste is made with quality ingredients to give you the best taste.",
+      "pPrice": 175,
+      "pCategory": "meat&seafood",
+      "pImage": "https://m.media-amazon.com/images/I/51SbS5UgQYL._PIbundle-5,TopRight,0,0_SX464SY619SH20_.jpg",
+      "pCheck": true,
+      "id": 47
+    },
+    {
+      "pName": "ITC Master Chef Chicken Seekh Kebab, 500 g |Non-Veg Frozen Snack| Ready to Cook",
+      "pDescription": "Take every day snacking to a whole new level with ITC Master Chef’s Chicken Seekh Kebab. Available in a ready to cook pack, this frozen snack is a must-have at home.\nThis tempting snack is not just tasty but is loaded with nutritious goodness. It is high in protein and is made with a special mix of spices to give you that loved desi flavour.\nThe best part is, it’s quick and easy to cook. You can prepare this mouth-watering plate of Chicken Seekh Kebab in a microwave, fry it on your tawa, or just bake it.",
+      "pPrice": 292,
+      "pCategory": "meat&seafood",
+      "pImage": "https://m.media-amazon.com/images/I/71O2dXunqjL._SX679_.jpg",
+      "pCheck": true,
+      "id": 48
+    },
+    {
+      "pName": "Tulip Pork Leg Ham 340g Product of Denmark",
+      "pDescription": "Brand: Tulip\nLeg Pork Hamm 340 Gms\nNon Vegetarian",
+      "pPrice": 499,
+      "pCategory": "meat&seafood",
+      "pImage": "https://m.media-amazon.com/images/I/41RnqudEi2S.jpg",
+      "pCheck": true,
+      "id": 49
+    },
+    {
+      "pName": "ANJALI SEAFOOD Dry Bombay Duck Fish (100 Gms) - Pack of 2",
+      "pDescription": "Dried bombay ducks are excellent source of calcium\nGood for health and nutritional benefits\nShelf Life: 180 Days\nThis is a Non-vegetarian product\nVacuum Packed",
+      "pPrice": 278,
+      "pCategory": "meat&seafood",
+      "pImage": "https://m.media-amazon.com/images/I/613OoNtaFUL._SY741_PIbundle-2,TopRight,0,0_SX494SY741SH20_.jpg",
+      "pCheck": true,
+      "id": 50
+    },
+    {
+      "pName": "More Fresh Catla Fish - Small (Net Wt: 500gm, Gross Wt: 960gm)",
+      "pDescription": "Vitamins such as a and d are also present\nThis meat helps increase the absorption rate, boosts immunity and has anti-inflammatory properties\nIt also contains plenty of minerals such as zinc, iron and calcium, and has an abundance of omega 3 fatty acids\nCatla fish good for health\nThis catla fish is rich in protein and omega acid which is most essential nutrition value for healthy life style",
+      "pPrice": 180,
+      "pCategory": "meat&seafood",
+      "pImage": "https://m.media-amazon.com/images/I/61AMWB9jZ4L._SX679_.jpg",
+      "pCheck": true,
+      "id": 51
+    },
+    {
+      "pName": "Maaza Mango Drink, Original Flavour, 1.2 L PET Bottle",
+      "pDescription": "REAL MANGO INDULGENCE: Indulge yourself in real mango delight with Maaza, made from real mango pulp of hand-picked real Alphonso\nRICH TASTE: Enjoy the sweet, rich and thick juicy pulp of mangoes with wholesome properties\nREADY TO SERVE FRUIT DRINK: This mango drink is ready to serve drink, so relish it anytime, anywhere\nTASTES BEST WHEN CHILLED: Enhance your Maaza drinking experience by chilling it\nENJOY IT IN ANY SEASON: Experience the real taste of mangoes in every season with Maaza mango drink\nCOMMONLY SEARCHED TOPICS: maaza, maaza drink, maaza mango drink, fruit drink, mango drink, maaza in fresh, maaza bottle, maaza juice",
+      "pPrice": 58,
+      "pCategory": "beverages",
+      "pImage": "https://m.media-amazon.com/images/I/61+jGc7vLIL._SX679_.jpg",
+      "pCheck": true,
+      "id": 52
+    },
+    {
+      "pName": "Horlicks Health & Nutrition Drink 500 g Jar, For immunity and 5 signs of growth (Classic Malt)",
+      "pDescription": "Health Drink that has nutrients to support immunity.\nClinically proven to improve 5 signs of growth\nClinically proven to make kids Taller, Stronger & Sharper\nScientifically proven to improve Power of Milk\nIt helps in holistic development of Children\nHorlicks has Bio-Available Nutrients which get absorbed in the blood and are carried to all parts of the body.",
+      "pPrice": 265,
+      "pCategory": "beverages",
+      "pImage": "https://m.media-amazon.com/images/I/511GcxShzVL._SX679_.jpg",
+      "pCheck": true,
+      "id": 53
+    },
+    {
+      "pName": "Pepsi Black, Can, 250 ml",
+      "pDescription": "Maximum taste with zero calories\nA can that goes well with your diet plan\nmaterial_features:vegetarian\nitem_form:liquid",
+      "pPrice": 32,
+      "pCategory": "beverages",
+      "pImage": "https://m.media-amazon.com/images/I/61DwjIi-mbL._SX679_.jpg",
+      "pCheck": true,
+      "id": 54
+    },
+    {
+      "pName": "Ocean Energy Drink enriched with natural caffeine, glucose & vitamins| 250ml | Pack of 6 - Virat Edition Energy Drink",
+      "pDescription": "Oââ‚¬cean Energy Drink cans are canned sustainably and are made with 70% Recycled Aluminum\nOââ‚¬cean Energy Drink with Taurine to maintain physical function & Stress Reduction\nitem_form:Liquid\nmaterial_features:Vegetarian\nOââ‚¬cean Energy Drink with Sucrose & Glucose to provide you long-lasting energy",
+      "pPrice": 248,
+      "pCategory": "beverages",
+      "pImage": "https://m.media-amazon.com/images/I/71nmgtuVEXS._SX679_PIbundle-6,TopRight,0,0_AA679SH20_.jpg",
+      "pCheck": true,
+      "id": 55
+    },
+    {
+      "pName": "Thums Up Cold Drink | Soft Drink with Strong Taste | Spicy & Fizzy Cold Drink | Recyclable Can, 300 ml (Pack of 6)",
+      "pDescription": "STRONG TASTE: Refresh yourself with the strong taste of Thums Up\nSPICY & FIZZY: This strong, spicy and fizzy cold drink is designed to suit your palate\nTASTE THE THUNDER: Bring out the adventurous side of you with the thunderous taste of Thums Up drink\nCREATE AND ENJOY MOMENTS: Enjoy this beverage with family, friends and relive the joy of togetherness\nRECYCLABLE PACKAGING: Thums UP cans are 100% recyclable, ensuring environmental sustainability",
+      "pPrice": 216,
+      "pCategory": "beverages",
+      "pImage": "https://m.media-amazon.com/images/I/71DFdZfRmdL._SX679_.jpg",
+      "pCheck": true,
+      "id": 56
+    },
+    {
+      "pName": "Coolberg Non Alcoholic Beer Assorted Flavors 330ml Glass Bottle - Pack of 6 (330ml x 6) Peach, Mint, Malt, Cranberry, Ginger & Strawberry",
+      "pDescription": "Coolberg brings the all-new 6 exciting flavors in the form of Non Alcoholic Beer\nCoolberg Non Alcoholic Beer Flavors Available - Malt, Mint, Ginger, Cranberry, Cranberry Sugar Free, Peach, Strawberry\nPacked in the new premium glass bottle with a high-quality label and outer packaging of the carton which is supported by strong cushioning of foam\nPackage Content: 6 X 330 ML Glass Bottle of Assorted Non Alcoholic Beer\nCoolberg is consumed in celebrations and get-togethers. It can be consumed by entire family as it is also suitable for kids and elderly as well.\nCoolberg drinks go well all food cuisines. Popular combinations are with Pizza, Pasta, Biryani, Chinese, Dosa, Burgers, etc.\nHop in for the happiest brew with India's First 100% Zero Alcoholic Beer",
+      "pPrice": 426,
+      "pCategory": "beverages",
+      "pImage": "https://m.media-amazon.com/images/I/61rN2hbnphL._SX569_PIbundle-6,TopRight,0,0_SX569SY711SH20_.jpg",
+      "pCheck": true,
+      "id": 57
+    },
+    {
+      "pName": "Tata Tea Agni | Strong chai With 10% Extra Strong Leaves | Black Tea | 500g",
+      "pDescription": "10% EXTRA STRONG LEAVES: Make your mornings strong with 10% extra strong leaves; SPECIAL BLEND: Tata Agni leaf tea has a special blend of tea leaves\nSIP IT ANYTIME: Make anytime tea time with a refreshing sip of your favorite tea\nSTRONG TEA: Enjoy a strong cup of tea with Tata Tea Agni Strong Leaf Tea\nFlavor Name: Original; Item Form: Loose Leaves; Caffeine Content: Medium Caffeine; Material Features: Vegetarian\nALSO TRY: Tata Tea Premium, Tata Tea Agni Dust, Tata Tea Chakra Gold\ncontainer type:pack",
+      "pPrice": 100,
+      "pCategory": "beverages",
+      "pImage": "https://m.media-amazon.com/images/I/61OoghXyADL._SX679_.jpg",
+      "pCheck": true,
+      "id": 58
+    },
+    {
+      "pName": "Nescafé Classic Instant Coffee, 95g Dawn Jar",
+      "pDescription": "Start your day right with the first sip of this classic that awakens your senses to new opportunities\nPremium frothy instant coffee right at home; a must try for all coffee-lovers. Flavor: Plain\nCountry of Origin: India\nFlavourful and 100% pure coffee that is perfect for any time of the day\nSpecially designed NESCAFE glass jar keeps your coffee tasting delicious until the last drop",
+      "pPrice": 310,
+      "pCategory": "beverages",
+      "pImage": "https://m.media-amazon.com/images/I/71DpoMAG6pL._SX679_.jpg",
+      "pCheck": true,
+      "id": 59
+    },
+    {
+      "pName": "Bevzilla 200 Gram 100% Arabica Instant Classic Strong Coffee Powder | Premium Coffee| Strong Coffee| Classic Coffee| Espresso, Latte & Cappucino| Pure Coffee| Hot & Cold Coffee",
+      "pDescription": "The Bevzilla Coffee powder is made from 100% pure Arabica Beans and promises to deliver smooth, delicious, and frothy coffee every time.\nIt delivers a premium taste of freshly brewed cafe-like coffee at home at the same cost as your regular coffee.\nBalanced, smooth, and strong without any bitterness with subtle aromatic & delicious notes of pure coffee.\nGluten-free & Vegan friendly with no preservatives, no additives, and no added sugar.\n100% Pure Arabica Coffee",
+      "pPrice": 269,
+      "pCategory": "beverages",
+      "pImage": "https://m.media-amazon.com/images/I/71xwcJP81WL._SX679_.jpg",
+      "pCheck": true,
+      "id": 60
+    },
+    {
+      "pName": "Lay's Potato Chips 24g/27g, West Indies Hot 'n' Sweet Chilli flavour, Crunchy Chips & Snacks (weight may vary )",
+      "pDescription": "out this item\nHOT & SWEET FLAVOUR: Lay’s West Indies Hot 'n' Sweet Chilli flavour will ignite your tastebuds\nQUALITY POTATOES: Made from the highest quality, farm-grown potatoes\n100% VEGETARIAN: Lay’s West Indies Hot 'n' Sweet Chilli is a 100% vegetarian snack\nPERFECT FOR ANY OCCASSION: A versatile snack that can be enjoyed in any setting\nSHELF LIFE: For the best flavour, crunch, and overall experience, Lay’s West Indies Hot 'n' Sweet Chilli is best consumed within 5 months\nABOUT THE BRAND: With its rich history and know-how, Lay’s is always on the lookout for the best flavours, cuts, and innovations that are guaranteed to bring a smile to your face",
+      "pPrice": 9,
+      "pCategory": "snacks&sweets",
+      "pImage": "https://m.media-amazon.com/images/I/718mIkrmCfL._SX679_.jpg",
+      "pCheck": true,
+      "id": 61
+    },
+    {
+      "pName": "ORION Choco Pie - Chocolate Coated Soft Biscuit 12 Pcs Pack, 336 g",
+      "pDescription": "Each pack contains 12 Choco pies dipped in Hot Chocolate, Centre Filled with Marshmallow.\nPerfect pack for snacking at home or sharing with your family or friends\nAn ideal gift for any festive occasion, Gift for Friends, Family relatives.\n100% vegetarian and made with premium ingredient.\nA delicious way to satisfy all your cravings",
+      "pPrice": 124,
+      "pCategory": "snacks&sweets",
+      "pImage": "https://m.media-amazon.com/images/I/71-1m0qauBL._SX679_.jpg",
+      "pCheck": true,
+      "id": 62
+    },
+    {
+      "pName": "Sunfeast Dark Fantasy Choco Fills, 300g, Original Filled Cookies with Choco Crème",
+      "pDescription": "Sunfeast Dark Fantasy Choco Fills is a one-of-a-kind cookie you can indulge in for a sinful chocolate experience\nIt has a perfectly baked golden cookie on the outside, luscious molten chocolate on the inside\nCan’t wait for the boring day to end? Take a bite of this indulgent chocolate cookie to turn on the Din Khatam, Fantasy Shuru mode\nA treat so indulgent and delectable, you just won’t like to share\nIt is ideal as an on the go snack because you never know when a craving might strike\nDark Fantasy Choco Fills cookie is also an essential ingredient to whip up some quick and delicious desserts",
+      "pPrice": 139,
+      "pCategory": "snacks&sweets",
+      "pImage": "https://m.media-amazon.com/images/I/81LO0QPqZAL._SX679_.jpg",
+      "pCheck": true,
+      "id": 63
+    },
+    {
+      "pName": "Wafer Style Potato Chips - tangy Treat Masala, 40g",
+      "pDescription": "VIBRANT FLAVOUR: Lay’s Wafer Style Tangy Treat Potato Chips are the perfect light chips with balanced flavour\nWAFER STYLE: Thinly Sliced potatoes for an enhanced crisp\nHIGH-QUALITY POTATOES: Lay's potato chips are made from the highest quality farm-grown potatoes\nPERFECT FOR ANY OCCASION: Enjoy them with your favorite movie or have them on quick snack breaks\nABOUT THE BRAND: With its rich history and know-how, Lay’s is always on the lookout for the best flavours, cuts, and innovations that are guaranteed to bring a smile to your face",
+      "pPrice": 20,
+      "pCategory": "snacks&sweets",
+      "pImage": "https://m.media-amazon.com/images/I/51h8VyupY0L._SX679_.jpg",
+      "pCheck": true,
+      "id": 64
+    }
+  ],
+  "users": [
+    {
+      "name": "parag parmar",
+      "email": "paragp18@gmail.com",
+      "pass": "parag18",
+      "id": 1
+    },
+    {
+      "name": "peter",
+      "email": "peter@gmail.com",
+      "pass": "peter11",
+      "id": 2
+    },
+    {
+      "name": "dutt",
+      "email": "dutt@123gmail.com",
+      "pass": "dutt123",
+      "id": 3
+    },
+    {
+      "name": "virat",
+      "email": "virat18@gmail.com",
+      "pass": "virat18",
+      "id": 4
+    },
+    {
+      "email": "parag@gmail.com",
+      "pass": "parag333",
+      "id": 5
+    },
+    {
+      "name": "lucifer",
+      "email": "luci@gmail.com",
+      "pass": "luci123",
+      "id": 6
+    },
+    {
+      "name": "priyanshu",
+      "email": "priyanshu@gmail.com",
+      "pass": "007007",
+      "id": 7
+    },
+    {
+      "name": "tony",
+      "email": "tony@gmail.com",
+      "pass": "1212",
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "name": "parag",
+      "email": "paragp1718@gmail.com",
+      "pass": "parag888",
+      "id": 10
+    }
+  ],
+  "cart": [
+    {
+      "pName": "Fresh mango,1kg",
+      "pDescription": "100% Carbide Free & Naturally Ripened\nRipe & bright yellow in color\nRich in Vitamin A, C, iron, folate and magnesium\nStore in cool and dry place\n100% Natural, Great in taste",
+      "pPrice": 213,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/41g30K50tCL._SX679_.jpg",
+      "pCheck": true,
+      "quantity": 2,
+      "userId": 2,
+      "productId": 6,
+      "id": 1,
+      "product_quan": 2
+    },
+    {
+      "pName": "Fresh Banana Robusta, 1kg",
+      "pDescription": "Banana robusta\nGraded, sorted and quality fruits and vegetables\nFresh, hygienic and natural\nSemi tall variety with a very sweet taste and a good aroma\nThey contain lots of dietary fiber and are an excellent source of instant energy.\nOne banana supplies 30 percent of the daily vitamin B6 requirement and is rich in vitamin C, potassium and fiber.\ningredients:fresh banana\nitem_form:whole",
+      "pPrice": 213,
+      "pCategory": "fruits",
+      "pImage": "https://m.media-amazon.com/images/I/51ebZJ+DR4L._SX679_.jpg",
+      "pCheck": true,
+      "quantity": 3,
+      "userId": 2,
+      "productId": 7,
+      "id": 2,
+      "product_quan": 3
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<div class="card border-0 mt-3 bgImage">
+    <img src="assets/product_list_background.jpg" class="card-img">
+    <div class="card-img-overlay text-center my-3 d-flex justify-content-center align-items-center">
+        <div>
+            <p id="product_list_text" class="card-title fs-1 text-capitalize">{{ productName }}</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="d-flex justify-content-center">
+
+    <div class="conatiner my-5" *ngIf="productData">
+    
+        <div class="card">
+            <img src="{{productData.pImage}}" class="card-img-top productImage" alt="Organic Avocado">
+            <div class="card-body">
+              <h5 class="card-title"> {{productData.pName}} </h5>
+              <p class="card-text"> {{productData.pDescription}} </p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Price:</strong> {{productData.pPrice | currency:'INR'}} </li>
+                <li class="list-group-item"><strong>Category:</strong> {{productData.pCategory | titlecase}} </li>
+                <li class="list-group-item"><strong>Availability:</strong> In Stock</li>
+              </ul>
+              <div class="btn-group mx-3 my-2">
+                <button type="button" class="btn btn-sm btn-outline-secondary" (click)="quantity('min')">-</button>
+                <span class="mx-2"> {{productQuantity}} </span>
+                <button type="button" class="btn btn-sm btn-outline-secondary" (click)="quantity('pluse')">+</button>
+              </div>
+              <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group mx-3 mt-2">
+                      <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addToCart(productData)" *ngIf="!removeCart">Add to Cart</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary" (click)="removeToCart(productData)" *ngIf="removeCart">Remove to Cart</button>
+                      <button type="button" class="btn btn-sm btn-outline-secondary ms-3">Buy Now</button>
+                    </div>
+                <small class="text-muted">Free shipping on orders over $50</small>
+              </div>
+        </div>
+    
+    </div>
+
+</div>
+
+  

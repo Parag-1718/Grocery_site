@@ -1,0 +1,127 @@
+<div class="root ">
+    <div class="bg mt-0">
+        <div class="container text_container">
+            <div class="h1 heading">Don’t miss our daily amazing deals.</div>
+            <div class="save">Save up to 60% off on your first order</div>
+        </div>
+    </div>
+
+    <!-- cetegories component from the cetalogue module start -->
+    <div class="container-fluid">
+        <app-category></app-category>
+    </div>
+    <!-- cetegories component from the cetalogue module ends -->
+
+    <!-- navigation bar for products starts -->
+    <nav class="d-flex flex-wrap text-dark container my-5  justify-content-around">
+        <div class="">
+            <a class="navbar-brand fs-5 fw-semibold" routerLink="/module/catalogue/product-list">Explore Cetegories</a>
+        </div>
+        <div class="text-capitalize">
+            <ul class="d-inline-flex">
+                <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list">all</a></li>
+                <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/vegetables">Vegetables</a></li>
+                <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/fruits">Fruits</a></li>
+                <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/beverages">Coffe And Teas</a></li>
+                <li class="mx-2 a_style"><a class="nav-link" routerLink="//module/catalogue/product-list/meat&seafood">Meat</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- navigation bar for products ends -->
+
+    <!-- products carousel starts-->
+
+
+    <div class="container-fluid">
+        <carousel class="my-5" [cellWidth]="300" [height]="550" [margin]="20" [arrowsTheme]="'dark'">
+            <div class="card carousel-cell " *ngFor="let item of products">
+                <img src='{{item.pImage}}' class="card-img-top mm" routerLink="/module/catalogue/product-details/{{item.id}}"/>
+                <div class="card-header">
+                    <h5 class="card-title"> {{item.pName}} </h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Category: {{item.pCategory}}</p>
+                    <p class="card-text">Price: {{item.pPrice | currency }} </p>
+                    <a href="#" class="btn btn-primary" (click)="addToCart(item.id)">Add to Cart</a>
+                </div>
+            </div>
+        </carousel>
+    </div>
+
+</div>
+
+<div class="main-container d-flex justify-content-evenly my-5">
+
+    <div class="subdiv1">
+        <h3><b>Top Sells</b></h3>
+        <ng-container *ngFor="let item of topsells">
+            <div class="product-container mb-1">
+                <div><img class="image-container" [src]="item.source" alt=""
+                        style="max-height: 100px; max-width: 100px;"></div>
+                <div>
+                    <div class="name-container">{{item.name}}</div>
+                    <div class="detail-container">
+                        <div class="details"><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="details">${{item.price}}</div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="subdiv2">
+        <h3><b>Top Rated</b></h3><br>
+        <ng-container *ngFor="let item of toprated">
+            <div class="product-container">
+                <div><img class="image-container" [src]="item.source" alt="" style="max-height: 80px; max-width: 80px;">
+                </div>
+                <div>
+                    <div class="name-container">{{item.name}}</div>
+                    <div class="detail-container">
+                        <div class="details"><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="details">${{item.price}}</div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="subdiv3">
+        <h3><b>Trending items</b></h3><br>
+        <ng-container *ngFor="let item of trendingItems">
+            <div class="product-container">
+                <div><img class="image-container" [src]="item.source" alt="" style="max-height: 80px; max-width: 80px;">
+                </div>
+                <div>
+                    <div class="name-container">{{item.name}}</div>
+                    <div class="detail-container">
+                        <div class="details"><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="details">${{item.price}}</div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+    <div class="subdiv4">
+        <h3><b>Recently Added</b></h3><br>
+        <ng-container *ngFor="let item of recentlyAdded">
+            <div class="product-container">
+                <div><img class="image-container" [src]="item.source" alt="" style="max-height: 80px; max-width: 80px;">
+                </div>
+                <div>
+                    <div class="name-container">{{item.name}}</div>
+                    <div class="detail-container">
+                        <div class="details"><i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="details">${{item.price}}</div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+
+</div>

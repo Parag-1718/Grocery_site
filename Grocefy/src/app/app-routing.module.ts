@@ -1,15 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './shared/components/home/home.component';
+import { NotfoundComponent } from './shared/components/notfound/notfound.component';
 
 const routes: Routes = [
  {
-  path: 'front',
-  loadChildren: () => import('./front/front.module').then(m => m.FrontModule)
+  path:'shared',
+  loadChildren:()=> import("./shared/shared.module").then(m => m.SharedModule)
  },
  {
-  path: '',
-  component: HomeComponent
+  path:'module',
+  loadChildren:()=> import("./modules/modules.module").then(m => m.ModulesModule)
+ },
+ {
+  path:'',
+  component:HomeComponent
+ },
+ {
+  path:'**',
+  component:NotfoundComponent
  }
 ];
 

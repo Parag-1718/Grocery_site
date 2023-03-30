@@ -1,0 +1,62 @@
+<p>my-cart works!</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Item Description</th>
+            <th scope="col">Unit Price</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Sub Total</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cart of cartData;let i=index">
+            <td>{{cart.pName}} {{cart.pCategory}}</td>
+            <td>{{cart.pPrice |currency:'INR' }}</td>
+            <td>
+                <div>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="quantity('min',cart)">-</button>
+                    <span class="mx-2"> {{cart.quantity}} </span>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="quantity('pluse',cart)">+</button>
+                </div>
+            </td>
+            <td>{{cart.quantity * cart.pPrice}}</td>
+            <td>
+                <button class="btn" (click)="removeItem(cart)">X</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+<div class="summary text-capitalize">
+    <div class="row">
+        <div class="col-sm-9">
+
+        </div>
+        <div class="col-sm-3">
+
+            <ul>
+                <li class="mx-2">
+                    <span>amount: </span> <span> {{subtotal | currency:'INR'}}</span>
+                </li>
+                <li class="mx-2">
+                    <span>tex: </span> <span> {{text | currency:'INR'}}</span>
+                </li>
+                <li class="mx-2">
+                    <span>delivery: </span> <span> {{delivery | currency:'INR'}}</span>
+                </li>
+                <li class="mx-2">
+                    <span>discount: </span> <span> {{discount | currency:'INR'}}</span>
+                </li>
+                <hr>
+                <li class="mx-2">
+                    <span>total: </span> <span> {{totalPrice | currency:'INR'}}</span>
+                </li>
+                <button class="btn btn-outline-success my-3" routerLink="/module/cart/checkout">checkout</button>
+            </ul>
+        </div>
+    </div>
+</div>

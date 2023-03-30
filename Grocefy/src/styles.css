@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
-*{
-    font-family: 'Roboto', sans-serif;
+.a_style{
+    list-style-type: none;
+}
+
+/* body{        
+    padding-top: 60px;
+    padding-bottom: 40px;
+} */
+.fixed-header, .fixed-footer{
+    width: 100%;
+    position: fixed;        
+    padding: 10px 0
+}
+.fixed-header{
+    top: 0;
+}
+.fixed-footer{
+    bottom: 0;
+    height: 30vh;
 }

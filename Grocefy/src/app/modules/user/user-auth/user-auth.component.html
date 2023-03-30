@@ -1,0 +1,103 @@
+
+
+<!-- sing up for user -->
+<div class="user_auth container" *ngIf="!loginForm">
+    <form [formGroup]="userSingUp" (ngSubmit)="singUP(userSingUp)">
+        <h1 class="text-capitalise mt-5 mb-3 head">Sign Up For Users</h1>
+    
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="name" placeholder="First Name" formControlName="first_name">
+          <label for="name">First Name</label>
+          <div class="text-danger-emphasis">
+            <p *ngIf="userSingUp.get('first_name')?.errors?.['noSpaceAllowed'] && userSingUp.get('first_name')?.touched">spance is not allowed</p>
+            <p *ngIf="userSingUp.get('first_name')?.errors?.['required'] && userSingUp.get('first_name')?.touched">first name is required</p>
+          </div>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="lname" placeholder="Last Name" formControlName="last_name">
+          <label for="lname">Last Name</label>
+          <div class="text-danger-emphasis">
+            <p *ngIf="userSingUp.get('last_name')?.errors?.['noSpaceAllowed']  && userSingUp.get('last_name')?.touched">spance is not allowed</p>
+            <p *ngIf="userSingUp.get('last_name')?.errors?.['required'] && userSingUp.get('last_name')?.touched">last name is required</p>
+          </div>
+        </div>
+    
+        <div class="form-floating mb-3">
+          <input type="tel" class="form-control" id="phone" placeholder="phonenumber" formControlName="primary_mobile_number">
+          <label for="phone">Phone Number</label>
+          <div class="text-danger-emphasis">
+            <p *ngIf="userSingUp.get('primary_mobile_number')?.errors?.['pattern'] && userSingUp.get('primary_mobile_number')?.touched">Enter valid phone number</p>
+            <p *ngIf="userSingUp.get('primary_mobile_number')?.errors?.['required'] && userSingUp.get('primary_mobile_number')?.touched">Phone number is required</p>
+          </div>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="email" placeholder="Email" formControlName="primary_email">
+          <label for="email">Email address</label>
+          <div class="text-danger-emphasis">
+            <p *ngIf="userSingUp.get('primary_email')?.errors?.['pattern'] && userSingUp.get('primary_email')?.touched">Enter valid email</p>
+            <p *ngIf="userSingUp.get('primary_email')?.errors?.['required'] && userSingUp.get('primary_email')?.touched">email is required</p>
+          </div>
+        </div>
+    
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="username" placeholder="username" formControlName="username">
+          <label for="username">username</label>
+          <div class="text-danger-emphasis">
+            <p *ngIf="userSingUp.get('username')?.errors?.['required'] && userSingUp.get('username')?.touched">username is required</p>
+            <p *ngIf="userSingUp.get('primary_email')?.errors?.['minlength'] && userSingUp.get('primary_email')?.touched">minimun length should be 4</p>
+          </div>
+        </div>
+
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+          <label for="password">Password</label>
+          <div class="text-danger-emphasis">
+            <p *ngIf="userSingUp.get('password')?.errors?.['minlength'] && userSingUp.get('password')?.touched">minimum 6 character is required</p>
+            <p *ngIf="userSingUp.get('password')?.errors?.['required'] && userSingUp.get('password')?.touched">password is required</p>
+          </div>
+        </div>
+    
+        <button type="submit" class="btn" [disabled]="userSingUp.invalid">Sign up</button>
+        <button class="btn ms-3" (click)="reset()">Reset</button>
+
+        <div class="my-2 loginLink">
+            <p (click)="showLoginOrRegister()">Alredy have account? Click here to Login</p>
+        </div>
+    </form>
+
+</div>
+
+<div class="user_auth container" *ngIf="loginForm">
+    <form [formGroup]="userLogin" (ngSubmit)="login(userLogin.value)">
+        <h1 class="text-capitalise mt-5 mb-3 head">Login For Users</h1>
+    
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="username" placeholder="username" formControlName="username">
+          <label for="username">username</label>
+          <div class="text-danger-emphasis">
+            <p *ngIf="userLogin.get('username')?.errors?.['required'] && userLogin.get('username')?.touched">username is required</p>
+            <p *ngIf="userLogin.get('primary_email')?.errors?.['minlength'] && userLogin.get('primary_email')?.touched">minimun length should be 4</p>
+          </div>
+        </div>
+    
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+          <label for="password">Password</label>
+          <div class="text-danger-emphasis">
+            <p *ngIf="userLogin.get('password')?.errors?.['minlength'] && userLogin.get('password')?.touched">minimum 6 character is required</p>
+            <p *ngIf="userLogin.get('password')?.errors?.['required'] && userLogin.get('password')?.touched">password is required</p>
+          </div>
+        </div>
+    
+        <button type="submit" class="btn" [disabled]="userLogin.invalid">Login</button>
+        <button class="btn ms-3" (click)="reset()">Reset</button>
+
+        <div class="my-2 loginLink">
+            <p (click)="showLoginOrRegister()">Don't have account? Click here to register</p>
+        </div>        
+    </form>
+
+</div>
+  

@@ -1,0 +1,25 @@
+<!-- navigation bar  -->
+<nav class="d-flex flex-wrap text-dark container my-5  justify-content-around">
+    <div class="">
+        <a class="navbar-brand fs-5 fw-semibold" routerLink="/module/catalogue/product-list">Explore Cetegories</a>
+    </div>
+    <div class="text-capitalize">
+        <ul class="d-inline-flex">
+            <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list">all</a></li>
+            <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/vegetables">Vegetables</a></li>
+            <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/fruits">Fruits</a></li>
+            <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/beverages">Coffe And Teas</a></li>
+            <li class="mx-2 a_style"><a class="nav-link" routerLink="//module/catalogue/product-list/meat&seafood">Meat</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- catrgories carousel -->
+<carousel class="my-5" [cellWidth]="300" [height]="400" [margin]="20"[arrowsTheme]="'dark'">
+    <div class="card carousel-cell " *ngFor="let item of groceryCategories" >
+     <img src='{{item.source}}' class="card-img-top" alt="Sunset Over the Sea" routerLink="/module/catalogue/product-list/{{item.category}}"/>
+      <div class="card-body">
+        <p class="card-text text-center">{{item.name}}</p>
+      </div>
+    </div>
+</carousel>
