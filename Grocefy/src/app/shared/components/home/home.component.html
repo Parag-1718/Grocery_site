@@ -41,8 +41,8 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text">Category: {{item.pCategory}}</p>
-                    <p class="card-text">Price: {{item.pPrice | currency }} </p>
-                    <a href="#" class="btn btn-primary" (click)="addToCart(item.id)">Add to Cart</a>
+                    <p class="card-text">Price: {{item.pPrice | currency:'INR' }} </p>
+                    <a  class="btn btn-primary" (click)="addToCart(item.id)">Add to Cart</a>
                 </div>
             </div>
         </carousel>

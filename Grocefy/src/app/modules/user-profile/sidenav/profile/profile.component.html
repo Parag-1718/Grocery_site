@@ -1,41 +1,71 @@
 
-<div class="row profile">
+<form [formGroup]="userProfileForm" (ngSubmit)="save(userProfileForm.value)">
 
-    <div class="col-sm-5 my-5">
+    <div class="row profile">
+        
+        <div class="col-sm-5 my-5">
             <div class="form-group mb-3">
-                <label for="firstName">First Name</label>
-                <input class="form-control" type="text" name="firstName">
+                <label for="name">First Name</label>
+                <input type="text" class="form-control" id="name" placeholder="First Name" formControlName="first_name">
+                <div class="text-danger-emphasis">
+                    <p *ngIf="userProfileForm.get('first_name')?.errors?.['noSpaceAllowed'] && userProfileForm.get('first_name')?.touched">spance is not allowed</p>
+                    <p *ngIf="userProfileForm.get('first_name')?.errors?.['required'] && userProfileForm.get('first_name')?.touched">first name is required</p>
+                </div>
             </div>
             <div class="form-group mb-3">
-                <label for="firstName">Email</label>
-                <input class="form-control" type="text" name="firstName">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Email" formControlName="primary_email">
+                <div class="text-danger-emphasis">
+                    <p *ngIf="userProfileForm.get('primary_email')?.errors?.['pattern'] && userProfileForm.get('primary_email')?.touched">Enter valid email</p>
+                    <p *ngIf="userProfileForm.get('primary_email')?.errors?.['required'] && userProfileForm.get('primary_email')?.touched">email is required</p>
+                </div>
             </div>
             <div class="form-group mb-3">
-                <label for="firstName">Alternate Contact Email</label>
-                <input class="form-control" type="text" name="firstName">
+                <label for="semail">Alternative Email address</label>
+                <input type="email" class="form-control" id="semail" placeholder="Email" formControlName="secondary_email">
+                <div class="text-danger-emphasis">
+                    <p *ngIf="userProfileForm.get('secondary_email')?.errors?.['pattern'] && userProfileForm.get('secondary_email')?.touched">Enter valid email</p>
+                    <p *ngIf="userProfileForm.get('secondary_email')?.errors?.['required'] && userProfileForm.get('secondary_email')?.touched">email is required</p>
+                </div>
             </div>
             <div class="form-group mb-3">
                 <label for="firstName">Date of Birth</label>
-                <input class="form-control" type="text" name="firstName">
+                <input class="form-control" type="date" name="firstName" formControlName="date_of_birth">
+                <div class="text-danger-emphasis">
+                    <p *ngIf="userProfileForm.get('date_of_birth')?.errors?.['required'] && userProfileForm.get('date_of_birth')?.touched">email is required</p>
+                </div>
             </div>
+        </div>
+        <div class="col-sm-5 my-5">
+            <div class="form-group mb-3">
+                <label for="lname">Last Name</label>
+                <input type="text" class="form-control" id="lname" placeholder="Last Name" formControlName="last_name">
+                <div class="text-danger-emphasis">
+                    <p *ngIf="userProfileForm.get('last_name')?.errors?.['noSpaceAllowed']  && userProfileForm.get('last_name')?.touched">spance is not allowed</p>
+                    <p *ngIf="userProfileForm.get('last_name')?.errors?.['required'] && userProfileForm.get('last_name')?.touched">last name is required</p>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" placeholder="phone number" formControlName="primary_mobile_number">
+                <div class="text-danger-emphasis">
+                    <p *ngIf="userProfileForm.get('primary_mobile_number')?.errors?.['pattern'] && userProfileForm.get('primary_mobile_number')?.touched">Enter valid phone number</p>
+                    <p *ngIf="userProfileForm.get('primary_mobile_number')?.errors?.['required'] && userProfileForm.get('primary_mobile_number')?.touched">Phone number is required</p>
+                </div>
+            </div>
+            <div class="form-group mb-3">
+                <label for="sphone">Alternative Phone Number</label>
+                <input type="tel" class="form-control" id="sphone" placeholder="phone number" formControlName="secondary_mobile_number">
+                <div class="text-danger-emphasis">
+                    <p *ngIf="userProfileForm.get('secondary_mobile_number')?.errors?.['pattern'] && userProfileForm.get('secondary_mobile_number')?.touched">Enter valid phone number</p>
+                    <p *ngIf="userProfileForm.get('secondary_mobile_number')?.errors?.['required'] && userProfileForm.get('secondary_mobile_number')?.touched">Phone number is required</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-2 my-5">
+            <div class="form-group mt-4">
+                <button class="form-control btn btn-success" >Save</button>
+            </div>
+        </div>
     </div>
-    <div class="col-sm-5 my-5">
-        <div class="form-group mb-3">
-            <label for="firstName">Last Name</label>
-            <input class="form-control" type="text" name="firstName">
-        </div>
-        <div class="form-group mb-3">
-            <label for="firstName">Contact Number</label>
-            <input class="form-control" type="text" name="firstName">
-        </div>
-        <div class="form-group mb-3">
-            <label for="firstName">Alternate Contact Number</label>
-            <input class="form-control" type="text" name="firstName">
-        </div>
-    </div>
-    <div class="col-sm-2 my-5">
-        <div class="form-group mt-4">
-            <button class="form-control btn btn-success">Save</button>
-        </div>
-    </div>
-</div>
+</form>

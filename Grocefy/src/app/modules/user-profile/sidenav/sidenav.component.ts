@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-sidenav',
@@ -11,6 +12,7 @@ export class SidenavComponent {
   constructor(private activeRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
+
     
     if(localStorage.getItem('current')){
       let item = localStorage.getItem('current')
@@ -36,4 +38,8 @@ export class SidenavComponent {
     // console.log(parts);
     return parts[parts.length - 1];
   }
+
+  logout(){
+    localStorage.removeItem('user')
+   }
 }

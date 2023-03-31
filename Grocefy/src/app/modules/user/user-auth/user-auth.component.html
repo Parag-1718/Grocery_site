@@ -2,7 +2,7 @@
 
 <!-- sing up for user -->
 <div class="user_auth container" *ngIf="!loginForm">
-    <form [formGroup]="userSingUp" (ngSubmit)="singUP(userSingUp)">
+    <form [formGroup]="userSingUp" (ngSubmit)="singUP(userSingUp.value)">
         <h1 class="text-capitalise mt-5 mb-3 head">Sign Up For Users</h1>
     
         <div class="form-floating mb-3">

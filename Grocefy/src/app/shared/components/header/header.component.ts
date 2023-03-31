@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-header',
@@ -16,7 +17,7 @@ export class HeaderComponent {
   cartItems = 0
   //#endregion
 
-  constructor( private router:Router, private product:ProductService, private cart:CartService){}
+  constructor( private router:Router, private product:ProductService, private cart:CartService, private user:UserService){}
 
   ngOnInit(){
 
@@ -27,6 +28,9 @@ export class HeaderComponent {
         if(localStorage.getItem('user')){
           this.menuType = 'user'
           this.showUserName();
+        }
+        else{
+          this.menuType = 'deafult'
         }
       }
     })

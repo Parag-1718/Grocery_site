@@ -7,6 +7,7 @@ import { ProfileComponent } from './sidenav/profile/profile.component';
 import { OrderComponent } from './sidenav/order/order.component';
 import { ManageAddressComponent } from './sidenav/manage-address/manage-address.component';
 import { ChnagePasswordComponent } from './sidenav/chnage-password/chnage-password.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { ChnagePasswordComponent } from './sidenav/chnage-password/chnage-passwo
   ],
   imports: [
     CommonModule,
-    UserProfileRoutingModule
+    UserProfileRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class UserProfileModule { }

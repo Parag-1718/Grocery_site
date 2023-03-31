@@ -1,41 +1,46 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { filter } from 'rxjs';
 import { addProduct } from '../../data-type';
 import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent {
-
-  //#region 
-    products:any = [];
+  //#region
+  products: any = [];
   //#endregion
-  constructor(private productService:ProductService, private cart:CartService) {}
+  constructor(
+    private productService: ProductService,
+    private cart: CartService,
+    private toast:ToastrService,
+    private user:UserService
+  ) {}
 
   ngOnInit() {
     this.getPopularProducts();
+
   }
 
-  getPopularProducts(){
-    this.productService.popularProducts().subscribe((res)=>{
+  getPopularProducts() {
+    this.productService.popularProducts().subscribe((res) => {
       // console.log(res);
-      this.products = res
-    })
+      this.products = res;
+    });
   }
 
-  addToCart(id:number){
-    let item = this.products.find((product:addProduct) => product.id === id)
+  addToCart(id: number) {
+    let item = this.products.find((product: addProduct) => product.id === id);
     item.quantity = 1;
-    this.cart.addItemToCart(item)
+    this.cart.addItemToCart(item);
+    this.toast.success("item is Added!!")
   }
-
-
-  
 
   f_item = [
     {
@@ -62,8 +67,7 @@ export class HomeComponent {
     'recentlyAdded',
   ];
 
-
-  topItems:any = [
+  topItems: any = [
     [
       { name: 'Orange 1kg', source: 'assets/topsells1.PNG', price: '2' },
       { name: 'Orange 1kg', source: 'assets/topsells2.PNG', price: '4' },
@@ -83,7 +87,7 @@ export class HomeComponent {
       { name: 'Orange 1kg', source: 'assets/topsells2.PNG', price: '20' },
       { name: 'Orange 1kg', source: 'assets/topsells1.PNG', price: '1' },
       { name: 'Orange 1kg', source: 'assets/topsells2.PNG', price: '5' },
-    ]
+    ],
   ];
 
   topsells = [

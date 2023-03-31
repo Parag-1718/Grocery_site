@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { addProduct, cart } from 'src/app/shared/data-type';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { ProductService } from 'src/app/shared/services/product.service';
@@ -20,7 +21,8 @@ export class ProductDetailsComponent {
   constructor(
     private activerouter: ActivatedRoute,
     private product: ProductService,
-    private cart:CartService
+    private cart:CartService,
+    private toast:ToastrService
   ) {}
   ngOnInit() {
     this.getDetails();
@@ -79,11 +81,13 @@ export class ProductDetailsComponent {
       this.productData.quantity = this.productQuantity
     }
    this.cart.addItemToCart(data);
+   this.toast.success("item is Added!!")
    this.removeCart = true;
   }
 
   removeToCart(data:any){
    this.cart.removeItemToCart(data);
+   this.toast.success("item is Removed!!")
    this.removeCart = false;
   }
 }

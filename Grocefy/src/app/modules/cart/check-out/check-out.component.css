@@ -1,0 +1,21 @@
+.address{
+    width: 25%;
+}
+
+.wraaper{
+    width: 20vh;
+}
+.bgImage img{
+    width: 100vw;
+    height: 15vh;
+    opacity: 5%;
+font-family: 'Roboto Condensed', sans-serif;
+}
+
+.bgImage p {
+    color:#d1e7dd ;
+}
+.cardImage{
+    width: 200px;
+    height: 250px;
+}

@@ -20,7 +20,15 @@
                 <!-- <li class="nav-item">
                     <a routerLink="module/catalogue/category" class="nav-link text-dark">cetegories</a></li> -->
                     <li class="nav-item">
-                        <a routerLink="module/cart" class="nav-link text-dark"><i class="fa-solid fa-cart-shopping"></i>({{cartItems}})</a></li>
+                        <!-- <a routerLink="module/cart" class="nav-link text-dark"><i class="fa-solid fa-cart-shopping"></i>({{cartItems}})</a></li>
+                         -->
+                         <a routerLink="module/cart" class="nav-link text-dark d-flex align-items-end">
+                            <i class="fa-solid fa-cart-shopping mx-2"></i>
+                            <div class="d-flex flex-column">
+                                My Cart
+                                <span class="badge rounded-pill text-bg-dark">{{ cartItems }}</span>
+                            </div>
+                          </a>
                         <li class="nav-item dropdown">
                             <div *ngIf=" menuType=='deafult'">
                                 <a class="nav-link dropdown-toggle text-dark" href="#" data-bs-toggle="dropdown">

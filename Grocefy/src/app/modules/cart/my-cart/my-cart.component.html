@@ -1,43 +1,56 @@
-<p>my-cart works!</p>
-
-<table class="table">
-    <thead>
-        <tr>
-            <th scope="col">Item Description</th>
-            <th scope="col">Unit Price</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Sub Total</th>
-            <th scope="col"></th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let cart of cartData;let i=index">
-            <td>{{cart.pName}} {{cart.pCategory}}</td>
-            <td>{{cart.pPrice |currency:'INR' }}</td>
-            <td>
-                <div>
-                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="quantity('min',cart)">-</button>
-                    <span class="mx-2"> {{cart.quantity}} </span>
-                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="quantity('pluse',cart)">+</button>
-                </div>
-            </td>
-            <td>{{cart.quantity * cart.pPrice}}</td>
-            <td>
-                <button class="btn" (click)="removeItem(cart)">X</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="card border-0 mt-3 bgImage">
+    <img src="assets/product_list_background.jpg" class="card-img">
+    <div class="card-img-overlay text-center my-3 d-flex justify-content-center align-items-center">
+        <div>
+            <p id="product_list_text" class="card-title fs-1 text-capitalize">Cart</p>
+        </div>
+    </div>
+</div>
 
 
+<div class="conatiner my-3">
 
-<div class="summary text-capitalize">
+    <table class="table table-striped container">
+        <thead>
+            <tr>
+                <th scope="col">Item Description</th>
+                <th scope="col">Unit Price</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Sub Total</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cart of cartData;let i=index">
+                <td> <img src="{{cart.pImage}}" alt=""> - {{cart.pName}}</td>
+                <td>{{cart.pPrice |currency:'INR' }} </td>
+                <td>
+                    <div>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" (click)="quantity('min',cart)">-</button>
+                        <span class="mx-2"> {{cart.quantity}} </span>
+                        <button type="button" class="btn btn-sm btn-outline-secondary" (click)="quantity('pluse',cart)">+</button>
+                    </div>
+                </td>
+                <td>{{cart.quantity * cart.pPrice | currency:"INR"}}</td>
+                <td>
+                    <button class="btn" (click)="removeItem(cart)">X</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<div class="summary text-capitalize conatiner">
     <div class="row">
         <div class="col-sm-9">
-
+            
         </div>
         <div class="col-sm-3">
-
+            
             <ul>
                 <li class="mx-2">
                     <span>amount: </span> <span> {{subtotal | currency:'INR'}}</span>

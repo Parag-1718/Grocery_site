@@ -1,0 +1,23 @@
+
+iframe{
+    width:300px;
+    height: 300px;
+}
+
+.wraaper{
+    width: 20vh;
+}
+.bgImage img{
+    width: 100vw;
+    height: 15vh;
+    opacity: 10%;
+font-family: 'Roboto Condensed', sans-serif;
+}
+
+.bgImage p {
+    color:#d1e7dd ;
+}
+.cardImage{
+    width: 200px;
+    height: 250px;
+}

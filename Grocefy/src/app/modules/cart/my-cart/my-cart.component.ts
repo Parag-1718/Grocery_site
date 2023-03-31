@@ -25,6 +25,7 @@ export class MyCartComponent {
   getCartData() {
     this.cartData = this.cart.getCartData();
     let price = 0
+
       this.cartData.forEach((item:cart)=>{
         if(item.quantity){
           price = price + (item.pPrice * item.quantity)
@@ -64,8 +65,8 @@ export class MyCartComponent {
       this.cart.removeItemToCart(product);
       this.getCartData();
     }
-  }
 
+}
 
   // delCartData(id:number) {
   //   this.cart.removeCart(id)

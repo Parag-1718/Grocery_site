@@ -26,7 +26,7 @@
                 <p class="card-text">Price: {{item.pPrice | currency}} </p>
                 <p class="card-text">Category: {{item.pCategory}}</p>
                 <p class="card-text">In stock: Yes</p>
-                <a href="#" class="btn btn-primary">Add to cart</a>
+                <a class="btn btn-primary" (click)="addToCart(item.id)">Add to cart</a>
             </div>
         </div>
 
