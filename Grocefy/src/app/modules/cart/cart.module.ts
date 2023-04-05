@@ -18,6 +18,9 @@ import { FilterbyCategoryPipe } from './filterby-category.pipe';
   imports: [
     CommonModule,
     CartRoutingModule,
+  ],
+  exports:[
+    MyCartComponent
   ]
 })
 export class CartModule { }

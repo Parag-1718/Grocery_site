@@ -8,9 +8,21 @@
 </div>
 
 
+<div class="container mt-5 my-5" *ngIf="dispalyEmplty">
+    <div class="row">
+      <div class="col-md-6 offset-md-3 text-center">
+        <i class="fas fa-shopping-cart fa-5x mb-3"></i>
+        <h2>Your Cart is Empty</h2>
+        <p class="lead">Looks like you haven't added anything to your cart yet.</p>
+        <a routerLink="" class="btn btn-outline-primary">Continue Shopping</a>
+      </div>
+    </div>
+  </div>
+
+
 <div class="conatiner my-3">
 
-    <table class="table table-striped container">
+    <table class="table table-striped container" *ngIf="!dispalyEmplty">
         <thead>
             <tr>
                 <th scope="col">Item Description</th>
@@ -44,7 +56,7 @@
 
 
 
-<div class="summary text-capitalize conatiner">
+<div class="summary text-capitalize conatiner" *ngIf="!dispalyEmplty">
     <div class="row">
         <div class="col-sm-9">
             

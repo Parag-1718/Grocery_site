@@ -1,5 +1,5 @@
 export const environment = {
-    baseUrl:'https://e099-117-217-127-105.in.ngrok.io/api/v1/',
+    baseUrl:'https://a521-117-217-127-105.in.ngrok.io/api/v1/',
     userLogin:'customer/login',
     userSignUp:'customer/register',
     customerDetais:'customer/customer-details',

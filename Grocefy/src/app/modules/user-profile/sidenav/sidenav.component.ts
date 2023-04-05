@@ -13,6 +13,7 @@ export class SidenavComponent {
 
   ngOnInit() {
 
+    window.scroll(0,0)
     
     if(localStorage.getItem('current')){
       let item = localStorage.getItem('current')
@@ -25,6 +26,9 @@ export class SidenavComponent {
         let url = res.url;
         this.currentcom = this.getLastUrlValue(url);
         if (this.currentcom == 'user-profile') {
+          this.currentcom = 'profile';
+        }
+        else if(this.currentcom == 'user_auth'){
           this.currentcom = 'profile';
         }
         // console.log(this.currentcom);
@@ -41,5 +45,7 @@ export class SidenavComponent {
 
   logout(){
     localStorage.removeItem('user')
+    localStorage.removeItem('userToken')
+    localStorage.removeItem('current')
    }
 }

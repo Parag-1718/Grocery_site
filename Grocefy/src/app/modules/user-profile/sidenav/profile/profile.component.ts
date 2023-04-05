@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -11,11 +13,29 @@ export class ProfileComponent {
 
   //#region 
   userProfileForm!:FormGroup;
-  constructor( private user:UserService){}
+  resData : any;
+  constructor( private user:UserService, private toast:ToastrService, private router:Router){}
 
   ngOnInit(){
 
-    this.user.getUserDetails();
+    this.user.getUserDetails().subscribe((res:any)=>{
+      if(res){
+        this.resData = res.data;
+        console.log(this.resData);
+        this.userProfileForm.setValue({
+         first_name: this.resData.first_name || "",
+         last_name:this.resData.last_name || '',
+         primary_mobile_number: this.resData.primary_mobile_number || '',
+         primary_email:this.resData.primary_email || '',
+         secondary_mobile_number: "",
+         secondary_email: "",
+         date_of_birth:"",
+         password: "",
+ 
+        })
+      }
+
+    })
 
     this.userProfileForm = new FormGroup({
       first_name: new FormControl(null, [
@@ -44,7 +64,11 @@ export class ProfileComponent {
       ]),
       date_of_birth: new FormControl(null,[
         Validators.required
-      ])
+      ]),
+      password: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(6),
+      ]),
     })
   }
 
@@ -57,5 +81,14 @@ export class ProfileComponent {
 
   save(data:object){
      console.log(data);
+     this.user.updateProfiile(data).subscribe((res:any)=>{
+      if(res){
+       this.toast.success(res.message);
+       this.userProfileForm.reset();
+       this.router.navigate(['/'])
+      }
+  },err=>{
+     this.toast.error(err.error.message)
+  })
   }
 }

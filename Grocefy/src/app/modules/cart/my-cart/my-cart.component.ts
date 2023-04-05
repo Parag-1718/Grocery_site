@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 import { addProduct, cart } from 'src/app/shared/data-type';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { ProductService } from 'src/app/shared/services/product.service';
@@ -17,10 +17,15 @@ export class MyCartComponent {
   text!:number;
   discount!:number;
   delivery!:number;
+  dispalyEmplty = true
+  displayTotal:EventEmitter<any> = new EventEmitter<any>()
   constructor(private product: ProductService, private cart:CartService) {}
 
   ngOnInit() {
     this.getCartData();
+    
+    window.scroll(0,0)
+
   }
   getCartData() {
     this.cartData = this.cart.getCartData();
@@ -32,10 +37,17 @@ export class MyCartComponent {
         }
       })
       this.subtotal = price;
+      if(this.subtotal){
+        this.dispalyEmplty = false
+      }
+      else{
+        this.dispalyEmplty = true
+      }
       this.text = ((price*18)/100);
       this.discount = ((price*10)/100);
       this.delivery = 100;
       this.totalPrice = price + ((price*18)/100) + ((price*10)/100) + 100;
+      this.displayTotal.emit(this.totalPrice)
     };
 
 

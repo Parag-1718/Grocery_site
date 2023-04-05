@@ -21,3 +21,6 @@ font-family: 'Roboto Condensed', sans-serif;
 .conatiner{
     width: 69vw;
 }
+carousel{
+    z-index: 50;    
+}

@@ -16,10 +16,10 @@ export class FooterComponent {
   ]
 
   social_accounts:any = [
-    {src:"fa-brands fa-square-facebook"},
-    {src:'fa-brands fa-square-instagram'},
-    {src:'fab fa-linkedin'},
-    {src:'fab fa-twitter-square'}
+    {src:"fa-brands fa-square-facebook", href:'https://www.facebook.com/'},
+    {src:'fa-brands fa-square-instagram', href:'https://www.instagram.com/'},
+    {src:'fab fa-linkedin', href:'https://www.linkedin.com/login'},
+    {src:'fab fa-twitter-square', href:'https://twitter.com/'}
   ]
 }
 

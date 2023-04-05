@@ -11,6 +11,8 @@ export class SucessComponent {
   constructor(private cart:CartService){}
   ngOnInit(){
 
+    window.scroll(0,0)
+
     localStorage.removeItem('localCart')
     this.cart.getCartLength.emit([ ])
   }

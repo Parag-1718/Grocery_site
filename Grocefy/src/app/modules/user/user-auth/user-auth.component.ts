@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { login, SingUp, userLogin } from 'src/app/shared/data-type';
 import { UserService } from 'src/app/shared/services/user.service';
@@ -14,9 +15,11 @@ export class UserAuthComponent {
   userSingUp!: FormGroup;
   userLogin!: FormGroup;
   loginForm: boolean = false;
-  constructor(private user: UserService, private toast: ToastrService) {}
+  constructor(private user: UserService, private toast: ToastrService, private router:Router) {}
 
   ngOnInit() {
+    window.scroll(0,0)
+
     this.user.userSingupLoginReload();
     this.userSingUp = new FormGroup({
       first_name: new FormControl(null, [
@@ -51,7 +54,7 @@ export class UserAuthComponent {
       ]),
       password: new FormControl(null, [
         Validators.required,
-        Validators.minLength(6),
+        Validators.minLength(5),
       ]),
     });
   }
@@ -84,7 +87,18 @@ export class UserAuthComponent {
 
   login(data: userLogin) {
     console.log(data);
-    this.user.loginToDb(data);
+    this.user.loginToDb(data).subscribe((res:any)=>{
+      if(res){
+        let user = this.userLogin.value
+        localStorage.setItem("user",JSON.stringify(user))
+         this.toast.success(res.message)
+         localStorage.setItem("userToken",JSON.stringify(res.data))
+         this.router.navigate(["/"])
+        //  this.getUserDetails();
+      }
+    },err=>{
+      this.toast.error(err.error.message)
+    })
     // this.user.userLogin(data)
     //  setTimeout(() => {
     //   this.storeLocalCartToRemote();

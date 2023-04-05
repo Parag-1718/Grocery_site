@@ -12,3 +12,10 @@ i{
 .bgColor{
     background-color: #d1e7dd;
 }
+.logo img{
+    height: 100px;
+ }
+ .logo p{
+    font-size: 25px;
+    margin-top: 25px;
+ }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { MyCartComponent } from './my-cart/my-cart.component';
 import { SucessComponent } from './sucess/sucess.component';
+import { AuthGuard } from 'src/app/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -11,10 +12,12 @@ const routes: Routes = [
   },
   {
     path:'checkout',
+    canActivate:[AuthGuard],
     component:CheckOutComponent
   },
   {
     path:'success',
+    canActivate:[AuthGuard],
     component:SucessComponent
   }
 ];

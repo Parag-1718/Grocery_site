@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SidenavComponent } from './user-profile/sidenav/sidenav.component';
+import { AuthGuard } from '../guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
   },
   {
     path:'user-profile',
+    canActivate:[AuthGuard],
     loadChildren:()=> import('./user-profile/user-profile.module').then(m=>m.UserProfileModule)
   },
   {

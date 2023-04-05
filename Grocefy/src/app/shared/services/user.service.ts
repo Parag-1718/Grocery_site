@@ -1,10 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Token } from '@angular/compiler';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment.development';
-import { login, SingUp, userLogin } from '../data-type';
+import { addProduct, Address, login, SingUp, userLogin } from '../data-type';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,9 @@ export class UserService {
   user_login = environment.userLogin;
   user_signup = environment.userSignUp;
   user_deatils = environment.customerDetais;
+  change_password = environment.changePassword;
+  update_profile = environment.editCustomer;
+  add_address = environment.addCustomerAddress
 
   constructor( private http:HttpClient, private router:Router, private toast:ToastrService) { }
 
@@ -49,21 +52,46 @@ export class UserService {
   }
 
   loginToDb(data:userLogin){
-    return this.http.post(this.base_url+this.user_login ,data).subscribe((res:any)=>{
-      if(res){
-         this.toast.success(res.message)
-         localStorage.setItem("user",JSON.stringify(res.data))
-         this.router.navigate(["/"])
-        //  this.getUserDetails();
-      }
-    },err=>{
-      this.toast.error(err.error.message)
-    })
+    return this.http.post(this.base_url+this.user_login ,data)
   }
 
   getUserDetails(){
-    return this.http.get('https://e099-117-217-127-105.in.ngrok.io/api/v1/customer/customer-details').subscribe((res:any)=>{
-      console.log(res);
-    })
+    return this.http.get(this.base_url+this.user_deatils,{headers: new HttpHeaders({'ngrok-skip-browser-warning': 'skip-browser-warning', 'Access-Control-Allow-Origin': '*'})}
+    )
+  }
+
+  changePassword(data:object){
+    return this.http.put(this.base_url+this.change_password,data)
+  }
+
+  updateProfiile(data:object){
+    return this.http.put(this.base_url+this.update_profile,data)
+  }
+
+  addAddress(data:Address){
+    return this.http.post(this.base_url+this.add_address,data)
+  }
+
+  getAddress(){
+    let addressData = localStorage.getItem('Address')
+    let Address = addressData && JSON.parse(addressData);
+    return Address || [];
+  }
+
+  addAddressToLs(item:Address){
+    let userAddress = this.getAddress();
+    let currentAddress = userAddress.find((add:any) => add.tag != item.tag);
+     userAddress.push(item)
+  
+    localStorage.setItem('Address',JSON.stringify(userAddress));
+  }
+
+  removeAddressToLs(item:Address){
+    let userAddress = this.getAddress();
+    let indexOfItem = userAddress.findIndex((add:any) => add.tag === item.tag);
+    if(indexOfItem != -1){
+      userAddress.splice(indexOfItem,1)
+    }
+    localStorage.setItem('Address',JSON.stringify(userAddress)) 
   }
 }

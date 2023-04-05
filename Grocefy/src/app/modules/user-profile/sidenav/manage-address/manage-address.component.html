@@ -1,33 +1,126 @@
+<div class="container">
+  <form [formGroup]="manageAddressForm" (ngSubmit)="add(manageAddressForm.value)" class="mb-4">
+  <h3 class="text-start">add address</h3>
 
-<div class="conatiner address my-5">
+  <div class="row mb-4">
+    <div class="col-sm-6">
+      <div class="form-outline">
+        <label for="address1" class="form-label">address line 1</label>
+        <textarea name="address1" id="address1" cols="10" rows="1" class="form-control"
+          formControlName="address_line_1"></textarea>
+          <div class="text-danger-emphasis">
+            <p *ngIf="manageAddressForm.get('address_line_1')?.errors?.['maxlength'] && manageAddressForm.get('address_line_1')?.touched">length should be less than 50</p>
+            <p *ngIf="manageAddressForm.get('address_line_1')?.errors?.['required'] && manageAddressForm.get('address_line_1')?.touched">Address line 1 is required</p>
+          </div>
+      </div>
+      <div class="form-outline">
+        <label for="address2" class="form-label">address line 2</label>
+        <textarea name="address2" id="address2" cols="10" rows="1" class="form-control"
+          formControlName="address_line_2"></textarea>
+          <div class="text-danger-emphasis">
+            <p *ngIf="manageAddressForm.get('address_line_2')?.errors?.['maxlength'] && manageAddressForm.get('address_line_2')?.touched">length should be less than 50</p>
+          </div>
+      </div>
+    </div>
+  </div>
 
-    <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2>Manage Addresses</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div class="list-group d-flex flex-row flex-wrap">
-              <div *ngFor="let address of addresses" class="list-group-item flex-grow-1 mx-3 border">
-                <div class="d-flex flex-row justify-content-between align-items-center">
-                  <div class="flex-grow-1">
-                    <h4>{{ address.name }}</h4>
-                    <p>{{ address.street }}</p>
-                    <p>{{ address.city }}, {{ address.state }} {{ address.zip }}</p>
-                  </div>
-                  <div class="d-flex flex-row justify-content-end align-items-center">
-                    <button class="btn btn-primary mx-2" (click)="editAddress(address)">Edit</button>
-                    <button class="btn btn-danger" (click)="deleteAddress(address)">Delete</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <div class="row mb-4 smallInput">
+    <div class="col-sm-3">
+      <div class="form-outline">
+        <label for="country" class="form-label">country</label>
+        <input type="text" name="country" id="country" class="form-control" formControlName="country">
+        <div class="text-danger-emphasis">
+          <p *ngIf="manageAddressForm.get('country')?.errors?.['maxlength'] && manageAddressForm.get('country')?.touched">length should be less than 50</p>
+          <p *ngIf="manageAddressForm.get('country')?.errors?.['required'] && manageAddressForm.get('country')?.touched">Country is required</p>
         </div>
       </div>
-      
-      
-      
+    </div>
+    <div class="col-sm-3">
+      <div class="form-outline">
+        <label for="state" class="form-label">state</label>
+        <input type="text" name="state" id="state" class="form-control" formControlName="state">
+        <div class="text-danger-emphasis">
+          <p *ngIf="manageAddressForm.get('state')?.errors?.['maxlength'] && manageAddressForm.get('state')?.touched">length should be less than 50</p>
+          <p *ngIf="manageAddressForm.get('state')?.errors?.['required'] && manageAddressForm.get('state')?.touched">State is required</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 smallInput">
+    <div class="col-sm-3">
+      <div class="form-outline">
+        <label for="city" class="form-label">city</label>
+        <input type="text" name="city" id="city" class="form-control" formControlName="city">
+        <div class="text-danger-emphasis">
+          <p *ngIf="manageAddressForm.get('city')?.errors?.['maxlength'] && manageAddressForm.get('city')?.touched">length should be less than 50</p>
+          <p *ngIf="manageAddressForm.get('city')?.errors?.['required'] && manageAddressForm.get('city')?.touched">city is required</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="form-outline">
+        <label for="area" class="form-label">area</label>
+        <input type="text" name="area" id="area" class="form-control" formControlName="area">
+        <div class="text-danger-emphasis">
+          <p *ngIf="manageAddressForm.get('area')?.errors?.['maxlength'] && manageAddressForm.get('area')?.touched">length should be less than 50</p>
+          <p *ngIf="manageAddressForm.get('area')?.errors?.['required'] && manageAddressForm.get('area')?.touched">Area is required</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-4 smallInput">
+    <div class="col-sm-2">
+      <div class="form-outline">
+        <label for="postalCode" class="form-label">postalCode</label>
+        <input type="text" name="postalCode" id="postalCode" class="form-control" formControlName="postal_code">
+        <div class="text-danger-emphasis">
+          <p *ngIf="manageAddressForm.get('postal_code')?.errors?.['pattern'] && manageAddressForm.get('postal_code')?.touched">invalid postal code</p>
+          <p *ngIf="manageAddressForm.get('postal_code')?.errors?.['required'] && manageAddressForm.get('postal_code')?.touched">postal code is required</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-outline">
+        <label for="landmark" class="form-label">landmark</label>
+        <input type="text" name="landmark" id="landmark" class="form-control" formControlName="landmark">
+        <div class="text-danger-emphasis">
+          <p *ngIf="manageAddressForm.get('landmark')?.errors?.['maxlength'] && manageAddressForm.get('landmark')?.touched">length should be less than 50</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-2">
+      <div class="form-outline">
+        <label for="tag" class="form-label">tag</label>
+        <input type="text" name="tag" id="tag" class="form-control" formControlName="tag">
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-outline-success ">add address</button>
+
+</form>
+</div>
+
+<div class="conatiner me-5 my-5 ">
+  <h2 class="text-capitalize">manage-address</h2>
+
+  <div class="d-flex">
+    <div class="card mx-3 my-3" *ngFor="let address of addresses">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        {{ address.tag }} 
+        <button class="btn" (click)="delete(address)"> <i class="fa-sharp fa-solid fa-trash"></i></button>
+      </div>
+      <div class="card-body">
+        <p class="card-text">{{ address.address_line_1 }}</p>
+        <p class="card-text">{{ address.address_line_2 }}</p>
+        <p class="card-text">{{ address.landmark }}</p>
+        <p class="card-text">{{ address.area }}</p>
+        <p class="card-text">{{ address.city }}, {{ address.state }} {{ address.postal_code }}</p>
+        <p class="card-text">{{ address.country }}</p>
+      </div>
+
+  </div>
+  </div>
 </div>

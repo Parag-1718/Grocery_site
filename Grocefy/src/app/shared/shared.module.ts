@@ -9,6 +9,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { CatalogueModule } from '../modules/catalogue/catalogue.module';
 import { HttpClientModule } from "@angular/common/http";
+import { CartModule } from '../modules/cart/cart.module';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { HttpClientModule } from "@angular/common/http";
     SharedRoutingModule,
     IvyCarouselModule,
     CatalogueModule,
-    HttpClientModule
+    HttpClientModule,
+    CartModule
   ],
   exports: [
     HeaderComponent,

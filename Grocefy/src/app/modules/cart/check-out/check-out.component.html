@@ -7,16 +7,28 @@
   </div>
 </div>
 
-<div class="container d-flex justify-content-center">
+<div class="container d-flex justify-content-start">
 
   <div>
     <form>
-      <div class="form-group">
-        <label for="delivery my-3">Select Delivery Option:</label>
-        <div class="form-check" *ngFor="let option of deliveryOptions">
-          <input class="form-check-input mx-2" type="radio" name="delivery" id="{{option.value}}" [value]="option.value">
-          <label class="form-check-label" for="{{option.value}}">
-            {{option.label}}
+      <label for="delivery my-3">Select Delivery Option:</label>
+      <div class="form-group my-3 d-flex">
+        <div class="form-check d-flex align-items-center" *ngFor="let option of deliveryOptions">
+          <input class="form-check-input mx-2" type="radio" name="delivery" id="{{option.tag}}" [value]="option.tag">
+          <label class="form-check-label" for="{{option.tag}}">
+            
+
+            <div class="card my-3">
+              <div class="card-header">
+                {{ option.tag }}
+              </div>
+              <div class="card-body">
+                <p class="card-text">{{ option.address_line_1 }}</p>
+                <p class="card-text">{{ option.area }}</p>
+                <p class="card-text">{{ option.city }}, {{ option.state }} {{ option.postal_code }}</p>
+              </div>
+            </div>
+
           </label>
         </div>
       </div>

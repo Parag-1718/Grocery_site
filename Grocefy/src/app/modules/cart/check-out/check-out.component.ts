@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Address, addProduct } from 'src/app/shared/data-type';
+import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
   selector: 'app-check-out',
@@ -6,9 +8,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./check-out.component.css'],
 })
 export class CheckOutComponent {
-  deliveryOptions = [
-    { value: 'standard', label: '28  Bhavana  Tarun Bharat Sahar Road Andheri, Mumbai,Ahmedabad,400099,India' },
-    { value: 'express', label: 'Shop No 295 Gr Flr Om Niwas Lamington Road Opp Lamington Police Station Chowpatty, Mumbai,Ahmedabad,400007,India' },
-    { value: 'overnight', label: '33  st Floor Prabhadevi Indl.estate Vs Marg Opp Siddhivinayak Temple Prabhadevi, Mumbai,Ahmedabad,400025,India' },
-  ];
+
+  constructor( private user:UserService){}
+
+  ngOnInit(){
+    this.getData()
+    window.scroll(0,0)
+
+  }
+
+  deliveryOptions:Address[] = []
+
+  getData(){
+    this.deliveryOptions = this.user.getAddress()
+     }
 }
+
