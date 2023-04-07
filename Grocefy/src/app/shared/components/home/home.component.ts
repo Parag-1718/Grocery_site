@@ -6,6 +6,7 @@ import { addProduct } from '../../data-type';
 import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
 import { UserService } from '../../services/user.service';
+import { NewProductService } from '../../services/new-product.service';
 
 @Component({
   selector: 'app-home',
@@ -20,7 +21,9 @@ export class HomeComponent {
     private productService: ProductService,
     private cart: CartService,
     private toast:ToastrService,
-    private user:UserService
+    private user:UserService,
+    private newProduct:NewProductService,
+
   ) {}
 
   ngOnInit() {
@@ -29,10 +32,16 @@ export class HomeComponent {
   }
 
   getPopularProducts() {
-    this.productService.popularProducts().subscribe((res) => {
-      // console.log(res);
-      this.products = res;
-    });
+    // this.productService.popularProducts().subscribe((res) => {
+    //   // console.log(res);
+    //   this.products = res;
+    // });
+
+    this.newProduct.getAllProducts().subscribe((res:any)=>{
+      console.log("res", res);
+      this.products = res.data
+    })
+
   }
 
   addToCart(id: number) {

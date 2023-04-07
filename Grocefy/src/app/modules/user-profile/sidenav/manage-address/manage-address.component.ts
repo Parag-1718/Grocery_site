@@ -1,8 +1,10 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
+import { catchError, tap, throwError } from 'rxjs';
 import { Address, addProduct } from 'src/app/shared/data-type';
+import { EncryptionService } from 'src/app/shared/services/encryption.service';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({
@@ -13,9 +15,13 @@ import { UserService } from 'src/app/shared/services/user.service';
 export class ManageAddressComponent {
 
   manageAddressForm!:FormGroup
-  addresses: Address[] = [];
+  addresses!: Address[];
+  addressId:any;
+  addressIDForRemove:any;
+  ShowUpdatebtn:boolean = false
+  encryptionCode!:any
 
-  constructor( private user:UserService, private toast:ToastrService){}
+  constructor( private user:UserService, private toast:ToastrService, private encryptionService:EncryptionService){}
   ngOnInit(){
     this.manageAddressForm = new FormGroup({
       address_line_1: new FormControl('', [Validators.required, Validators.maxLength(50)]),
@@ -29,25 +35,108 @@ export class ManageAddressComponent {
       tag: new FormControl(''),
     });
     
-     this.addresses = this.user.getAddress()
+    // form localStorage
+    //  this.addresses = this.user.getAddress()
+
+    this.getAddress();
+  }
+
+  getAddress(){
+   this.user.getUserDetails().pipe(tap((res:any)=>{
+    console.log("details Response",res);
+    console.log("Adsress Response",res.data.addresses);
+    this.addresses = res.data.addresses;
+   }),
+   catchError((err:any)=>{
+    console.log(err.error);
+   return throwError(()=>err)
+   })
+   ).subscribe();
   }
 
   add(data:Address){
-     console.log(data);
-     this.user.addAddress(data).subscribe((res:any)=>{
+    //  console.log(data);
+    // try {
+    //   this.user.addAddress(data).subscribe((res:any)=>{
+    //     if(res){
+    //        this.toast.success(res.message)
+    //        this.user.addAddressToLs(data)
+    //    this.addresses = this.user.getAddress()
+    //        this.manageAddressForm.reset()
+    //     }})
+    // } catch (error:any) {
+    //    throwError (()=> new Error(error))
+    //   this.toast.error(error.error.message)
+    // }
+
+    this.user.addAddress(data).pipe(tap((res:any)=>{
       if(res){
-         this.toast.success(res.message)
-         this.user.addAddressToLs(data)
-     this.addresses = this.user.getAddress()
-         this.manageAddressForm.reset()
+        this.toast.success(res.message)
+        this.getAddress();
       }
-     }, err=>{
-        this.toast.error(err.error.message)
+      this.manageAddressForm.reset()
+    }),catchError(error =>{
+      this.toast.error(error.error.message)
+      return throwError(() => error)
+    })).subscribe();
+    
+  }
+
+  delete(id:string | undefined){
+  this.addressId = id
+  console.log(this.addressId);
+  this.removeAddressWithEncryption(this.addressId.toString())
+  }
+
+  edit(data:Address){
+    //  console.log(data.id);
+     this.encryption(data.id?.toString())
+     this.ShowUpdatebtn = true;
+     this.manageAddressForm.setValue({
+      address_line_1: data.address_line_1,
+      address_line_2: data.address_line_2,
+      area: data.area,
+      city: data.city,
+      state: data.state,
+      country:data.country,
+      postal_code: data.postal_code,
+      landmark: data.landmark,
+      tag: data.tag
      })
   }
 
-  delete(add:Address){
-    this.user.removeAddressToLs(add)
-    this.addresses = this.user.getAddress()
+  onUpdate(data:any){
+     console.log("id",this.encryptionCode);
+     console.log("data",data);
+
+     this.user.updateAddress(this.encryptionCode,data).subscribe((res:any)=>{
+      this.toast.success(res.message)
+      this.ShowUpdatebtn = false
+      this.manageAddressForm.reset()
+      this.getAddress();
+     }, err=>{
+      console.log(err.error.message);
+     })
   }
-}
+
+  encryption(id:any){
+    this.encryptionService.encryption(id).subscribe(res=>{
+    this.encryptionCode = res.data
+    console.log("encrypted response ",this.encryptionCode)
+    })
+  }
+
+  removeAddressWithEncryption(id:any){
+     this.encryptionService.encryption(id).pipe(tap((res:any)=>{
+      console.log("Encryption response", res);
+      let Encrypted_code = res.data;
+      this.user.removeAddress(Encrypted_code).subscribe((res:any)=>{
+        this.toast.success(res.message);
+        this.getAddress();
+      }, err=>{
+        this.toast.error(err.error.message)
+      })
+     })).subscribe()
+  }
+
+  }

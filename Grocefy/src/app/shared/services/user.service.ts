@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { environment } from 'src/environments/environment.development';
 import { addProduct, Address, login, SingUp, userLogin } from '../data-type';
+import { catchError, tap, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,10 @@ export class UserService {
   user_deatils = environment.customerDetais;
   change_password = environment.changePassword;
   update_profile = environment.editCustomer;
-  add_address = environment.addCustomerAddress
+  add_address = environment.addCustomerAddress;
+  delete_address = environment.deleteCustomerAddres;
+  edit_address = environment.editAddress;
+  header = environment.header
 
   constructor( private http:HttpClient, private router:Router, private toast:ToastrService) { }
 
@@ -94,4 +98,24 @@ export class UserService {
     }
     localStorage.setItem('Address',JSON.stringify(userAddress)) 
   }
+
+  removeAddress(encryption:string){
+    return this.http.delete(this.base_url + this.delete_address, {
+      headers: new HttpHeaders({
+        'ngrok-skip-browser-warning': 'skip-browser-warning',
+        'Access-Control-Allow-Origin': '*',
+        'address_id': encryption,
+      }),
+    })
+  }
+
+  updateAddress(encryption:string,data:any){
+    try {
+      return this.http.put(this.base_url + this.edit_address, data,
+        {headers: new HttpHeaders({'ngrok-skip-browser-warning': 'skip-browser-warning','Access-Control-Allow-Origin': '*','address_id': encryption,}),
+      })
+    } catch (error:any) {
+      return throwError(() => new Error(error));
+    }
+  } 
 }

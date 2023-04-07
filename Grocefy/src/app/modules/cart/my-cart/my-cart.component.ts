@@ -29,24 +29,24 @@ export class MyCartComponent {
   }
   getCartData() {
     this.cartData = this.cart.getCartData();
-    let price = 0
+    let amount = 0
 
-      this.cartData.forEach((item:cart)=>{
+      this.cartData.forEach((item:any)=>{
         if(item.quantity){
-          price = price + (item.pPrice * item.quantity)
+          amount = amount + (item.amount * item.quantity)
         }
       })
-      this.subtotal = price;
+      this.subtotal = amount;
       if(this.subtotal){
         this.dispalyEmplty = false
       }
       else{
         this.dispalyEmplty = true
       }
-      this.text = ((price*18)/100);
-      this.discount = ((price*10)/100);
+      this.text = ((amount*18)/100);
+      this.discount = ((amount*10)/100);
       this.delivery = 100;
-      this.totalPrice = price + ((price*18)/100) + ((price*10)/100) + 100;
+      this.totalPrice = amount + ((amount*18)/100) + ((amount*10)/100) + 100;
       this.displayTotal.emit(this.totalPrice)
     };
 

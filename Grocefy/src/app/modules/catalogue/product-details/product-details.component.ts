@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { addProduct, cart } from 'src/app/shared/data-type';
 import { CartService } from 'src/app/shared/services/cart.service';
+import { EncryptionService } from 'src/app/shared/services/encryption.service';
+import { NewProductService } from 'src/app/shared/services/new-product.service';
 import { ProductService } from 'src/app/shared/services/product.service';
 
 @Component({
@@ -12,21 +14,30 @@ import { ProductService } from 'src/app/shared/services/product.service';
 })
 export class ProductDetailsComponent {
   //#region
-  productData: addProduct | undefined;
+  productData: any | undefined;
   productName!: string | null;
   productQuantity: number = 1;
   removeCart: boolean = false;
-  cuurentCartItem!:addProduct
+  cuurentCartItem!:addProduct;
+  productId!:any
 
   constructor(
     private activerouter: ActivatedRoute,
     private product: ProductService,
+    private newproduct: NewProductService,
     private cart:CartService,
-    private toast:ToastrService
+    private toast:ToastrService,
+    private Encryption:EncryptionService
   ) {}
   ngOnInit() {
-    this.getDetails();
+    // this.getDetails();
     window.scrollBy(0,0)
+
+    this.activerouter.paramMap.subscribe((params) => {
+      this.productId = params.get('productId');
+      console.log(" this.productId:", this.productId)
+    });
+    this.encryption(this.productId);
   }
 
   getDetails() {
@@ -90,4 +101,16 @@ export class ProductDetailsComponent {
    this.toast.success("item is Removed!!")
    this.removeCart = false;
   }
+
+  encryption(id:number){
+    this.Encryption.encryption(id).subscribe((res:any)=>{
+      console.log("Encryption response :",res.data);
+      this.newproduct.getProductById(res.data).subscribe((res:any)=>{
+        console.log("product by id : ", res.data);
+        this.productData = res.data
+        this.productName = res.data.title
+      })
+    })
+  }
+  
 }

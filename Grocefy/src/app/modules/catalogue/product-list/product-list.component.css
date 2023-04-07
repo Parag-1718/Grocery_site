@@ -12,8 +12,8 @@ font-family: 'Roboto Condensed', sans-serif;
     color:#d1e7dd ;
 }
 .cardImage{
-    width: 200px;
-    height: 250px;
+    width: 100px;
+    height: 100px;
 }
 carousel{
     z-index: 50;    

@@ -7,13 +7,13 @@
     </div>
 </div>
 
-
+<!-- 
 <div class="d-flex justify-content-center">
 
     <div class="conatiner my-5" *ngIf="productData">
     
         <div class="card">
-            <img src="{{productData.pImage}}" class="card-img-top productImage" alt="Organic Avocado">
+            <img src="{{productData.avatar_image}}" class="card-img-top productImage" alt="Organic Avocado">
             <div class="card-body">
               <h5 class="card-title"> {{productData.pName}} </h5>
               <p class="card-text"> {{productData.pDescription}} </p>
@@ -38,6 +38,40 @@
         </div>
     
     </div>
+
+</div> -->
+
+
+<div class="d-flex justify-content-center">
+
+  <div class="conatiner my-5" *ngIf="productData">
+  
+      <div class="card">
+          <img src="{{productData.avatar_image}}" class="card-img-top productImage" alt="{{productData.slug}}">
+          <div class="card-body">
+            <h5 class="card-title"> {{productData.slug}} </h5>
+            <p class="card-text"> {{productData.description}} </p>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><strong>Price:</strong> {{productData.amount | currency:'INR'}} </li>
+              <li class="list-group-item"><strong>Short Description:</strong> {{productData.short_description| titlecase}} </li>
+              <li class="list-group-item"><strong>Availability:</strong> In Stock</li>
+            </ul>
+            <div class="btn-group mx-3 my-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary" (click)="quantity('min')">-</button>
+              <span class="mx-2"> {{productQuantity}} </span>
+              <button type="button" class="btn btn-sm btn-outline-secondary" (click)="quantity('pluse')">+</button>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group mx-3 mt-2">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="addToCart(productData)" *ngIf="!removeCart">Add to Cart</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="removeToCart(productData)" *ngIf="removeCart">Remove to Cart</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary ms-3">Buy Now</button>
+                  </div>
+              <small class="text-muted">Free shipping on orders over ₹50</small>
+            </div>
+      </div>
+  
+  </div>
 
 </div>
 

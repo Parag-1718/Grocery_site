@@ -20,10 +20,10 @@
         <div class="text-capitalize">
             <ul class="d-inline-flex">
                 <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list">all</a></li>
-                <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/vegetables">Vegetables</a></li>
-                <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/fruits">Fruits</a></li>
-                <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/beverages">Coffe And Teas</a></li>
-                <li class="mx-2 a_style"><a class="nav-link" routerLink="//module/catalogue/product-list/meat&seafood">Meat</a></li>
+                <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/1">Vegetables</a></li>
+                <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/2">Fruits</a></li>
+                <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/3">Coffe And Teas</a></li>
+                <li class="mx-2 a_style"><a class="nav-link" routerLink="//module/catalogue/product-list/4">Meat</a></li>
             </ul>
         </div>
     </nav>
@@ -33,15 +33,15 @@
 
 
     <div class="container-fluid">
-        <carousel class="my-5" [cellWidth]="300" [height]="550" [margin]="20" [arrowsTheme]="'dark'">
+        <carousel class="my-5" [cellWidth]="250" [height]="400" [margin]="20" [arrowsTheme]="'dark'">
             <div class="card carousel-cell " *ngFor="let item of products">
-                <img src='{{item.pImage}}' class="card-img-top mm" routerLink="/module/catalogue/product-details/{{item.id}}"/>
+                <img src='{{item.avtar_image}}' class="card-img-top mm" routerLink="/module/catalogue/product-details/{{item.id}}"/>
                 <div class="card-header">
-                    <h5 class="card-title"> {{item.pName}} </h5>
+                    <h5 class="card-title"> {{item.title}} </h5>
                 </div>
                 <div class="card-body">
-                    <p class="card-text">Category: {{item.pCategory}}</p>
-                    <p class="card-text">Price: {{item.pPrice | currency:'INR' }} </p>
+                    <p class="card-text">Short Description: {{item.short_description}}</p>
+                    <p class="card-text">Price: {{item.amount | currency:'INR' }} </p>
                     <a  class="btn btn-primary" (click)="addToCart(item.id)">Add to Cart</a>
                 </div>
             </div>

@@ -55,6 +55,7 @@ export class HeaderComponent {
    logout(){
     localStorage.removeItem('user')
     localStorage.removeItem('userToken')
+    localStorage.removeItem('current')
     this.menuType = 'deafult'
    }
 

@@ -34,8 +34,8 @@
         </thead>
         <tbody>
             <tr *ngFor="let cart of cartData;let i=index">
-                <td> <img src="{{cart.pImage}}" alt=""> - {{cart.pName}}</td>
-                <td>{{cart.pPrice |currency:'INR' }} </td>
+                <td> <img src="{{cart.avatar_image}}" alt=""> - {{cart.title}}</td>
+                <td>{{cart.amount |currency:'INR' }} </td>
                 <td>
                     <div>
                         <button type="button" class="btn btn-sm btn-outline-secondary" (click)="quantity('min',cart)">-</button>
@@ -43,7 +43,7 @@
                         <button type="button" class="btn btn-sm btn-outline-secondary" (click)="quantity('pluse',cart)">+</button>
                     </div>
                 </td>
-                <td>{{cart.quantity * cart.pPrice | currency:"INR"}}</td>
+                <td>{{cart.quantity * cart.amount | currency:"INR"}}</td>
                 <td>
                     <button class="btn" (click)="removeItem(cart)">X</button>
                 </td>

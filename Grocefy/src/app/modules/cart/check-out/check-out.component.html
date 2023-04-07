@@ -14,7 +14,7 @@
       <label for="delivery my-3">Select Delivery Option:</label>
       <div class="form-group my-3 d-flex">
         <div class="form-check d-flex align-items-center" *ngFor="let option of deliveryOptions">
-          <input class="form-check-input mx-2" type="radio" name="delivery" id="{{option.tag}}" [value]="option.tag">
+          <input class="form-check-input mx-2" type="radio" name="delivery" id="{{option.tag}}" [value]="option.tag" (click)="getAddressId(option.id)">
           <label class="form-check-label" for="{{option.tag}}">
             
 
@@ -32,7 +32,7 @@
           </label>
         </div>
       </div>
-      <button type="submit" class="btn btn-outline-success my-3" routerLink="/module/cart/success">Submit</button>
+      <button type="submit" class="btn btn-outline-success my-3">Submit</button>
     </form>
   </div>
   

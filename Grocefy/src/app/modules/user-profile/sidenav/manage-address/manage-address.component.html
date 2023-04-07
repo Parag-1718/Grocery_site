@@ -1,5 +1,5 @@
 <div class="container">
-  <form [formGroup]="manageAddressForm" (ngSubmit)="add(manageAddressForm.value)" class="mb-4">
+  <form [formGroup]="manageAddressForm" class="mb-4">
   <h3 class="text-start">add address</h3>
 
   <div class="row mb-4">
@@ -98,7 +98,8 @@
     </div>
   </div>
 
-  <button class="btn btn-outline-success ">add address</button>
+  <button class="btn btn-outline-success " *ngIf="!ShowUpdatebtn" (click)="add(manageAddressForm.value)">add address</button>
+  <button class="btn btn-outline-success "  *ngIf="ShowUpdatebtn" (click)="onUpdate(manageAddressForm.value)">update address</button>
 
 </form>
 </div>
@@ -110,7 +111,10 @@
     <div class="card mx-3 my-3" *ngFor="let address of addresses">
       <div class="card-header d-flex justify-content-between align-items-center">
         {{ address.tag }} 
-        <button class="btn" (click)="delete(address)"> <i class="fa-sharp fa-solid fa-trash"></i></button>
+        <div>
+          <button class="btn" (click)="edit(address)"> <i class="fa-solid fa-pen-to-square"></i></button>
+         <button class="btn" (click)="delete(address.id)"> <i class="fa-sharp fa-solid fa-trash"></i></button>
+        </div>
       </div>
       <div class="card-body">
         <p class="card-text">{{ address.address_line_1 }}</p>
