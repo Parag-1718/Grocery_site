@@ -8,21 +8,15 @@
 </div>
 
 
-<div class="container d-flex justify-content-center my-5">
+<div class="container d-flex justify-content-center mt-3">
     <div>
         <iframe src="https://embed.lottiefiles.com/animation/96237">
-    
         </iframe>
-        <div class="my-3 text-capitalize">
-             <p>
-                your Order has been placed successfully
-             </p>
-        </div>
-
     </div>
+    
 </div>
 
-<div class="container">
+<div class="container mb-5">
     <div class="row">
       <div class="col-md-8 offset-md-2">
         <div class="alert alert-success" role="alert">
@@ -32,14 +26,16 @@
           <div class="card-header">
             Order Details
           </div>
-          <div class="card-body">
-            <p>Order Number: 123456789</p>
-            <p>Order Date: April 7, 2023</p>
-            <p>Order Total: $50.00</p>
+          <div class="card-body" *ngFor="let order of orderDetails">
+            <p>Order Number: {{order.id}} </p>
+            <p>Order Date: {{order.createdAt | date:"mediumDate"}} </p>
+            <p>Delivery Address: {{order.delivery_address.tag + " - "}} {{order.delivery_address.address_line_1}}{{", "+ order.delivery_address.area}}{{", "+ order.delivery_address.city}}{{", "+ order.delivery_address.country}}</p>
+            <p>Enstimated Delivery Date: {{order.estimate_delivery_date | date:"mediumDate"}} </p>
+            <p>Order Total: {{order.total_amount | currency:'INR'}} </p>
           </div>
         </div>
         <div class="text-center mt-4">
-          <a href="#" class="btn btn-primary">Continue Shopping</a>
+          <a href="#" class="btn btn-primary" routerLink="/" (click)="remove()">Continue Shopping</a>
         </div>
       </div>
     </div>

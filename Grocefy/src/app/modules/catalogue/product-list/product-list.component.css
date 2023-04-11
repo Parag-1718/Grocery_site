@@ -14,6 +14,7 @@ font-family: 'Roboto Condensed', sans-serif;
 .cardImage{
     width: 100px;
     height: 100px;
+    cursor: pointer;
 }
 carousel{
     z-index: 50;    

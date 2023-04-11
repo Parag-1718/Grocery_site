@@ -23,6 +23,7 @@ export class ManageAddressComponent {
 
   constructor( private user:UserService, private toast:ToastrService, private encryptionService:EncryptionService){}
   ngOnInit(){
+   
     this.manageAddressForm = new FormGroup({
       address_line_1: new FormControl('', [Validators.required, Validators.maxLength(50)]),
       address_line_2: new FormControl('', [Validators.maxLength(50)]),
@@ -89,6 +90,7 @@ export class ManageAddressComponent {
   }
 
   edit(data:Address){
+    window.scrollTo(150,150)
     //  console.log(data.id);
      this.encryption(data.id?.toString())
      this.ShowUpdatebtn = true;

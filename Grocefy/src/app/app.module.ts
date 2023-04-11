@@ -13,7 +13,9 @@ import { UserService } from './shared/services/user.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
 import { TokenInterceptorService } from './shared/services/token-interceptor.service';
-
+// import { AppComponent } from './app.component';
+import { NgSpinKitModule } from 'ng-spin-kit';
+import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,10 @@ import { TokenInterceptorService } from './shared/services/token-interceptor.ser
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderHttpModule.forRoot({
+      showForeground:true
+    }),
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       timeOut: 3000,

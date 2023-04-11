@@ -45,6 +45,7 @@ export class HomeComponent {
   }
 
   addToCart(id: number) {
+
     let item = this.products.find((product: addProduct) => product.id === id);
     item.quantity = 1;
     this.cart.addItemToCart(item);

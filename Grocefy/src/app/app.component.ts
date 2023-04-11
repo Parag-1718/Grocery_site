@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgSpinKitModule } from 'ng-spin-kit'
 
 @Component({
   selector: 'app-root',

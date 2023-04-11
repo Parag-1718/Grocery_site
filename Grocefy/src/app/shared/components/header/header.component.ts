@@ -34,6 +34,7 @@ export class HeaderComponent {
         else{
           this.menuType = 'deafult'
         }
+        this.getCartItemsLength()
       }
     })
   }
@@ -56,11 +57,16 @@ export class HeaderComponent {
     localStorage.removeItem('user')
     localStorage.removeItem('userToken')
     localStorage.removeItem('current')
-    this.menuType = 'deafult'
+    localStorage.removeItem('orderId')
+    this.menuType = 'deafult',
+    this.cartItems = 0
    }
 
   getCartItemsLength(){
-    let cartData = localStorage.getItem('localCart');
+    let userData = localStorage.getItem("userToken")
+    let userName = userData && JSON.parse(userData).user.username;
+    console.log(userName);
+    let cartData = localStorage.getItem(`cart_${userName}`);
     if(cartData){
       this.cartItems = JSON.parse(cartData).length;
     }
@@ -68,7 +74,6 @@ export class HeaderComponent {
     this.cart.getCartLength.subscribe(res=>{
       this.cartItems = res.length
     })
-
     
   }
 }

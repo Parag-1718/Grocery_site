@@ -1,6 +1,16 @@
 
 <div class="layout">
-   <app-header></app-header>
-   <router-outlet></router-outlet>
-   <app-footer></app-footer>
+   <ngx-ui-loader 
+   fgsColor="#d1e7dd"
+   text="Please Wait..."
+   pbColor="#d1e7dd"
+   textColor="#d1e7dd"
+   ></ngx-ui-loader>
+   
+
+   <div ngxUiLoaderBlurred = "1">
+      <app-header></app-header>
+      <router-outlet></router-outlet>
+      <app-footer></app-footer>
+    </div>
 </div>

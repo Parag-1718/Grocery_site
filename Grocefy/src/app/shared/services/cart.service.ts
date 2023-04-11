@@ -11,32 +11,65 @@ export class CartService {
   constructor() { }
 
   getCartData(){
-    let cartdata = localStorage.getItem('localCart')
-    let localCart = cartdata && JSON.parse(cartdata);
-    return localCart || [];
+
+    let userData = localStorage.getItem("userToken")
+    let userName = userData && JSON.parse(userData).user.username;
+    console.log(userName);
+
+    let cartdata = localStorage.getItem(`cart_${userName}`)
+    let userCart = cartdata && JSON.parse(cartdata);
+    if (!userCart) {
+      return [];
+    }
+    return userCart;
   }
 
   addItemToCart(item:any){
-    let cart = this.getCartData();
-    let currentProduct = cart.find((product:any) => product.id === item.id);
+    // debugger
+    let userData = localStorage.getItem("userToken")
+    let userName = userData && JSON.parse(userData).user.username;
+    console.log(userName);
+
+    // Check if cart exists for user
+    let user = localStorage.getItem(`cart_${userName}`)
+    let userCart = user && JSON.parse(user);
+    if (!userCart) {
+      userCart = [];
+    }
+
+    // Add item to cart
+    
+    userCart = this.getCartData();
+    let currentProduct = userCart.find((product:any) => product.id === item.id);
     if(currentProduct){
       currentProduct.quantity = item.quantity
     }
     else{
-      cart.push(item)
+      userCart.push(item)
     }
-    // console.log(cart);
-    localStorage.setItem('localCart',JSON.stringify(cart));
-    this.getCartLength.emit(cart)
+
+    console.log(userCart);
+
+    localStorage.setItem(`cart_${userName}`, JSON.stringify(userCart));
+    // localStorage.setItem('localCart',JSON.stringify(userCart));
+    this.getCartLength.emit(userCart)
   }
 
   removeItemToCart(item:any){
-    let cart = this.getCartData();
-    let indexOfItem = cart.findIndex((product:any) => product.id === item.id);
+    let userCart = this.getCartData();
+
+    let userData = localStorage.getItem("userToken")
+    let userName = userData && JSON.parse(userData).user.username;
+    console.log(userName);
+
+    let indexOfItem = userCart.findIndex((product:any) => product.id === item.id);
     if(indexOfItem != -1){
-      cart.splice(indexOfItem,1)
+      userCart.splice(indexOfItem,1)
     }
-    localStorage.setItem('localCart',JSON.stringify(cart)) 
-    this.getCartLength.emit(cart)
+    localStorage.setItem(`cart_${userName}`, JSON.stringify(userCart));
+    this.getCartLength.emit(userCart)
   }
+
+  
+  
 }

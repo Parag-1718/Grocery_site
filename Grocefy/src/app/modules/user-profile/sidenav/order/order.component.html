@@ -3,8 +3,7 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th>Order ID</th>
-        <th>Customer Name</th>
+        <th>Order Number</th>
         <th>Order Date</th>
         <th>Items</th>
         <th>Total Price</th>
@@ -13,16 +12,15 @@
     <tbody>
       <tr *ngFor="let order of orders">
         <td>{{ order.id }}</td>
-        <td>{{ order.customerName }}</td>
-        <td>{{ order.orderDate | date }}</td>
+        <td>{{ order.createdAt | date:'medium' }}</td>
         <td>
           <ul>
-            <li *ngFor="let item of order.items">
-              {{ item.name }} ({{ item.quantity }})
+            <li *ngFor="let item of order.order_items">
+              {{ item.product.title }} ({{ item.qty }})
             </li>
           </ul>
         </td>
-        <td>{{ order.totalPrice | currency:"INR" }}</td>
+        <td>{{ order.total_amount | currency:"INR" }}</td>
       </tr>
     </tbody>
   </table>

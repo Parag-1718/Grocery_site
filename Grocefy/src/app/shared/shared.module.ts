@@ -10,6 +10,7 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
 import { CatalogueModule } from '../modules/catalogue/catalogue.module';
 import { HttpClientModule } from "@angular/common/http";
 import { CartModule } from '../modules/cart/cart.module';
+import { LoaderComponent } from './components/loader/loader.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CartModule } from '../modules/cart/cart.module';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    LoaderComponent
   ],
   imports: [
     CommonModule,

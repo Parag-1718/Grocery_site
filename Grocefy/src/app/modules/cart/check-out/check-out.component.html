@@ -10,11 +10,11 @@
 <div class="container d-flex justify-content-start">
 
   <div>
-    <form>
+    <form [formGroup]="checkoutForm">
       <label for="delivery my-3">Select Delivery Option:</label>
       <div class="form-group my-3 d-flex">
         <div class="form-check d-flex align-items-center" *ngFor="let option of deliveryOptions">
-          <input class="form-check-input mx-2" type="radio" name="delivery" id="{{option.tag}}" [value]="option.tag" (click)="getAddressId(option.id)">
+          <input class="form-check-input mx-2" type="radio" id="{{option.tag}}" [value]="option.tag" (input)="getAddressId(option.id,option.tag)" formControlName="selectOption">
           <label class="form-check-label" for="{{option.tag}}">
             
 
@@ -30,9 +30,13 @@
             </div>
 
           </label>
+
+          <div class="text-danger-emphasis">
+            <p *ngIf="checkoutForm.get('selectOption')?.errors?.['required'] && checkoutForm.get('selectOption')?.touched">Please select Delivery Address</p>
+          </div>
         </div>
       </div>
-      <button type="submit" class="btn btn-outline-success my-3">Submit</button>
+      <button class="btn btn-outline-success my-3" routerLink="/module/cart/success" (click)="submit()" [disabled]="checkoutForm.invalid">Place order</button>
     </form>
   </div>
   

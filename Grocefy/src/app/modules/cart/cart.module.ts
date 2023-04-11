@@ -6,6 +6,7 @@ import { MyCartComponent } from './my-cart/my-cart.component';
 import { CheckOutComponent } from './check-out/check-out.component';
 import { SucessComponent } from './sucess/sucess.component';
 import { FilterbyCategoryPipe } from './filterby-category.pipe';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,6 +19,8 @@ import { FilterbyCategoryPipe } from './filterby-category.pipe';
   imports: [
     CommonModule,
     CartRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     MyCartComponent

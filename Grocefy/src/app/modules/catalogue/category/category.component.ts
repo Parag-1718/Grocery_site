@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { CategoryService } from 'src/app/shared/services/category.service';
-import { Product18Service } from 'src/app/shared/services/product18.service';
 
 @Component({
   selector: 'app-category',
@@ -13,7 +12,6 @@ export class CategoryComponent {
 
   constructor(
     private category:CategoryService,
-    private product:Product18Service
   ){}
   
   //#region 

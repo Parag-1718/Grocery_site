@@ -1,7 +1,7 @@
 import { HttpHeaders } from "@angular/common/http";
 
 export const environment = {
-    baseUrl:'https://a521-117-217-127-105.in.ngrok.io/api/v1/',
+    baseUrl:'https://1f85-117-217-127-105.ngrok-free.app/api/v1/',
     userLogin:'customer/login',
     userSignUp:'customer/register',
     customerDetais:'customer/customer-details',

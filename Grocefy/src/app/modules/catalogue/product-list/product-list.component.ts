@@ -7,7 +7,6 @@ import { CategoryService } from 'src/app/shared/services/category.service';
 import { EncryptionService } from 'src/app/shared/services/encryption.service';
 import { NewProductService } from 'src/app/shared/services/new-product.service';
 import { ProductService } from 'src/app/shared/services/product.service';
-import { Product18Service } from 'src/app/shared/services/product18.service';
 import { UserService } from 'src/app/shared/services/user.service';
 
 @Component({

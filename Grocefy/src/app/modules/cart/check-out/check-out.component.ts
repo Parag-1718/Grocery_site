@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Address, addProduct } from 'src/app/shared/data-type';
 import { CartService } from 'src/app/shared/services/cart.service';
@@ -17,16 +19,24 @@ export class CheckOutComponent {
       private Cart:CartService,
       private Order:OrderService,
       private toast:ToastrService,
+      private router:Router,
     ) {}
 
     //#region 
     addressEncryption!:string;
     orderStatus = "W4YV_pkH7OAkvZO4P1gbzA=="
     paymentStatus = "W4YV_pkH7OAkvZO4P1gbzA=="
+    setlectedAddressTag:string = ''
+    checkoutForm! : FormGroup;
+
 
   ngOnInit() {
     this.getData();
     window.scroll(0, 0);
+
+      this.checkoutForm = new FormGroup({
+        selectOption : new FormControl("",Validators.required)
+      })
   }
 
 
@@ -39,12 +49,10 @@ export class CheckOutComponent {
     });
   }
 
-  getAddressId(id: any) {
+  getAddressId(id: any, tag:string) {
     console.log("id",id);
     this.encryption(id);
-    setTimeout(() => {
-      this.submit()
-    }, 1000);
+    this.setlectedAddressTag = tag
   }
 
   encryption(id:any){
@@ -55,12 +63,54 @@ export class CheckOutComponent {
   }
 
   submit(){
-    let data = this.Cart.getCartData();
+    let data1 = this.Cart.getCartData();
+    console.log("cartData",data1);
+
+   const order_product = [];
+    for(let i=0; i<data1.length; i++){
+      let order_productData =
+        {
+          product_id: data1[i].id,
+          product_name: data1[i].title,
+          qty: data1[i].quantity,
+          product_amount: data1[i].amount,
+          discount_type: data1[i].discount_type,
+          discount_amount: data1[i].discount_amount,
+        }
+      order_product.push(order_productData);
+    }
+    console.log("order products",order_product);
+
+    const currentDate = new Date()
+    const ordderDate = currentDate.toLocaleString()
+    const futureDate = new Date(ordderDate)
+    futureDate.setDate(futureDate.getDate() + 5);
+
+    let summary = localStorage.getItem("summary")
+    let orderAmount = summary && JSON.parse(summary);
+    console.log("order amounts",orderAmount);
+
+    let data = {
+      order_date: ordderDate,
+      special_note: "its special",
+      estimate_delivery_date: futureDate.toLocaleString(),
+      sub_total: orderAmount.sub_total,
+      tax_amount: orderAmount.tax_amount,
+      discount_amount: orderAmount.discount_amount,
+      total_amount: orderAmount.total_amount,
+      paid_amount: orderAmount.total_amount,
+      payment_type: 2,
+  
+      order_products: order_product
+    }
+
     console.log(data);
 
     this.Order.addOrder(data,this.addressEncryption,this.addressEncryption,this.paymentStatus,this.orderStatus).subscribe((res:any)=>{
       console.log("order response...", res);
       this.toast.success(res.message)
+      localStorage.setItem("orderId",res.data.id)
+      // this.router.navigate(['/module/cart/success'])
     }, err=>{
       console.log(err);
       this.toast.error(err.error.message)

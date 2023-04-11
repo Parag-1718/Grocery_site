@@ -1,4 +1,5 @@
 import { Component, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { addProduct, cart } from 'src/app/shared/data-type';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { ProductService } from 'src/app/shared/services/product.service';
@@ -19,7 +20,7 @@ export class MyCartComponent {
   delivery!:number;
   dispalyEmplty = true
   displayTotal:EventEmitter<any> = new EventEmitter<any>()
-  constructor(private product: ProductService, private cart:CartService) {}
+  constructor(private product: ProductService, private cart:CartService, private router:Router) {}
 
   ngOnInit() {
     this.getCartData();
@@ -76,6 +77,18 @@ export class MyCartComponent {
     removeItem(product:addProduct){
       this.cart.removeItemToCart(product);
       this.getCartData();
+    }
+
+    storeAmout(){
+      const summary = {
+        sub_total: this.subtotal,
+        tax_amount: this.text,
+        discount_amount: this.discount,
+        total_amount: this.totalPrice,
+      }
+      // console.log(summary);
+      localStorage.setItem("summary",JSON.stringify(summary))
+      this.router.navigate(["/module/cart/checkout"])
     }
 
 }
