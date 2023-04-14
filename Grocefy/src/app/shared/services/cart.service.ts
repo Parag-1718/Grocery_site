@@ -21,7 +21,7 @@ export class CartService {
     if (!userCart) {
       return [];
     }
-    return userCart;
+    return userCart || [];
   }
 
   addItemToCart(item:any){

@@ -19,3 +19,7 @@ font-family: 'Roboto Condensed', sans-serif;
     width: 200px;
     height: 250px;
 }
+
+input, label{
+    cursor: pointer;
+}

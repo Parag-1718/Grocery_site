@@ -21,7 +21,16 @@ export class OrderComponent {
   getOrders(){
     this.order.getAllOrdersByCustomerId().subscribe((res:any)=>{
       console.log("orders response", res.data.orders);
-      this.orders = res.data.orders
+      // this.orders = res.data.orders
+      this.orders=res.data.orders.sort((a:any,b:any)=>{
+        if(a.createdAt < b.createdAt){
+          return 1
+        }else if(a.createdAt > b.createdAt){
+          return -1
+        }else{
+          return 0
+        }
+      })
     })
   }
 

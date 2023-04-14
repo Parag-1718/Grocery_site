@@ -48,8 +48,15 @@ export class HomeComponent {
 
     let item = this.products.find((product: addProduct) => product.id === id);
     item.quantity = 1;
-    this.cart.addItemToCart(item);
-    this.toast.success("item is Added!!")
+    let userCart = this.cart.getCartData()
+    let currentProduct = userCart.find((product:any) => product.id === item.id);
+    if(currentProduct){
+      this.toast.info("item is alredy in Cart")
+    }
+    else{
+      this.cart.addItemToCart(item);
+      this.toast.success("item is Added!!")
+    }
   }
 
   f_item = [

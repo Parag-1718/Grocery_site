@@ -41,11 +41,19 @@ export class CheckOutComponent {
 
 
   deliveryOptions: Address[] = [];
+  showDeliveryOptions:boolean =true;
+
 
   getData() {
     this.user.getUserDetails().subscribe((res: any) => {
-      this.deliveryOptions = res.data.addresses;
-      console.log(res.data.addresses);
+      if(res){
+        this.deliveryOptions = res.data.addresses;
+        console.log(res.data.addresses);
+        this.showDeliveryOptions = true;
+
+        if(this.deliveryOptions.length === 0)
+        this.showDeliveryOptions = false
+      }
     });
   }
 

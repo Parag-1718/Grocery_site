@@ -80,6 +80,7 @@ export class ProfileComponent {
   }
 
   save(data:object){
+    // this.userProfileForm.markAllAsTouched()
      console.log(data);
      this.user.updateProfiile(data).subscribe((res:any)=>{
       if(res){

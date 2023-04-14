@@ -32,15 +32,12 @@ export class ProductDetailsComponent {
   ngOnInit() {
     // this.getDetails();
     window.scrollBy(0,0)
-
-    this.activerouter.paramMap.subscribe((params) => {
-      this.productId = params.get('productId');
-      console.log(" this.productId:", this.productId)
-    });
-    this.encryption(this.productId);
+    this.GetDetails();
+   
   }
 
   getDetails() {
+
     let productId = this.activerouter.snapshot.paramMap.get('productId');
     productId &&
       this.product.getProductId(productId).subscribe((res) => {
@@ -48,11 +45,13 @@ export class ProductDetailsComponent {
         this.productName = this.productData.pName;
         console.log(this.productData);
       });
-
-      let cartData = localStorage.getItem('localCart')
+      let userData = localStorage.getItem("userToken")
+      let userName = userData && JSON.parse(userData).user.username;
+      console.log(userName);
+      let cartData = localStorage.getItem(`cart${userName}`)
       if(cartData && productId){
       let item = JSON.parse(cartData);
-      item = item.filter((data:addProduct)=> data.id.toString() === productId)
+      item = item.filter((data:any)=> data.id.toString() === productId)
       if(item.length){
         this.removeCart = true
       }
@@ -112,5 +111,28 @@ export class ProductDetailsComponent {
       })
     })
   }
-  
+
+  GetDetails(){
+    this.activerouter.paramMap.subscribe((params) => {
+      this.productId = params.get('productId');
+      console.log(" this.productId:", this.productId)
+    });
+    this.encryption(this.productId);
+
+    let userData = localStorage.getItem("userToken")
+      let userName = userData && JSON.parse(userData).user.username;
+      console.log(userName);
+
+      let cartData = localStorage.getItem(`cart_${userName}`)
+      if(cartData && this.productId){
+      let item = JSON.parse(cartData);
+      item = item.filter((data:any)=> data.id.toString() === this.productId)
+      if(item.length){
+        this.removeCart = true
+      }
+      else{
+        this.removeCart = false
+      }
+  }
+}
 }

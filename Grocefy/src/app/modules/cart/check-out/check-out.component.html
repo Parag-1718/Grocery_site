@@ -1,22 +1,23 @@
 <div class="card border-0 mt-3 bgImage">
   <img src="assets/product_list_background.jpg" class="card-img">
   <div class="card-img-overlay text-center my-3 d-flex justify-content-center align-items-center">
-      <div>
-          <p id="product_list_text" class="card-title fs-1 text-capitalize">Select Delivery Method</p>
-      </div>
+    <div>
+      <p id="product_list_text" class="card-title fs-1 text-capitalize">Select Delivery Method</p>
+    </div>
   </div>
 </div>
 
-<div class="container d-flex justify-content-start">
+<div class="container d-flex justify-content-start" *ngIf="showDeliveryOptions">
 
   <div>
     <form [formGroup]="checkoutForm">
       <label for="delivery my-3">Select Delivery Option:</label>
       <div class="form-group my-3 d-flex">
         <div class="form-check d-flex align-items-center" *ngFor="let option of deliveryOptions">
-          <input class="form-check-input mx-2" type="radio" id="{{option.tag}}" [value]="option.tag" (input)="getAddressId(option.id,option.tag)" formControlName="selectOption">
+          <input class="form-check-input mx-2 border-1 border-info" type="radio" id="{{option.tag}}" [value]="option.tag"
+            (input)="getAddressId(option.id,option.tag)" formControlName="selectOption">
           <label class="form-check-label" for="{{option.tag}}">
-            
+
 
             <div class="card my-3">
               <div class="card-header">
@@ -32,13 +33,33 @@
           </label>
 
           <div class="text-danger-emphasis">
-            <p *ngIf="checkoutForm.get('selectOption')?.errors?.['required'] && checkoutForm.get('selectOption')?.touched">Please select Delivery Address</p>
+            <p
+              *ngIf="checkoutForm.get('selectOption')?.errors?.['required'] && checkoutForm.get('selectOption')?.touched">
+              Please select Delivery Address</p>
           </div>
         </div>
       </div>
-      <button class="btn btn-outline-success my-3" routerLink="/module/cart/success" (click)="submit()" [disabled]="checkoutForm.invalid">Place order</button>
+      <div class="d-flex justify-content-around">
+        <button class="btn btn-outline-danger my-3" [routerLink]="['/']"
+          routerLinkActive="router-link-active">Cancel</button>
+        <button class="btn btn-outline-success my-3" routerLink="/module/cart/success" (click)="submit()"
+          [disabled]="checkoutForm.invalid">Place order</button>
+      </div>
     </form>
   </div>
-  
+
 </div>
 
+<div class="container" *ngIf="!showDeliveryOptions">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="alert alert-warning" role="alert">
+        <strong>Attention!</strong> Your address has not been added to complete the order. Please add your address to
+        ensure timely delivery.
+        <br>
+        <strong><p>click below to add address</p></strong>
+        <a class="btn btn-outline-primary" [routerLink]="['/module/user-profile/manage-address']">Add Address</a>
+      </div>
+    </div>
+  </div>
+</div>
