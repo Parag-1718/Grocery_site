@@ -15,7 +15,7 @@ export class CartService {
     let userData = localStorage.getItem("userToken")
     let userName = userData && JSON.parse(userData).user.username;
     console.log(userName);
-
+    
     let cartdata = localStorage.getItem(`cart_${userName}`)
     let userCart = cartdata && JSON.parse(cartdata);
     if (!userCart) {
