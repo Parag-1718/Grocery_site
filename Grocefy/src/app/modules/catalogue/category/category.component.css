@@ -1,7 +1,28 @@
 carousel{
   z-index: 50;    
 }
+carousel p{
+  font-size: 18px;
+}
 
 .card{
   background-color: rgb(255, 255, 255,0.1);
+}
+
+.container-fluid{
+  width: 90%;
+}
+
+.wraaper{
+  width: 20vh;
+}
+.bgImage img{
+  width: 100vw;
+  height: 15vh;
+  opacity: 9%;
+font-family: 'Roboto Condensed', sans-serif;
+}
+
+.bgImage p{
+  color: #d1e7dd;
 }

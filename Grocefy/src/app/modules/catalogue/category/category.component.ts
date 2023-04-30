@@ -26,8 +26,21 @@ export class CategoryComponent {
     try {
       this.category.getCategory().subscribe((res:any)=>{
         console.log(res);
-        if(res){
+        // if(res){
+        //   this.productCategory = res.data;
+        // }
+        if (res.data) {
           this.productCategory = res.data;
+          console.log('Product_Res', res.data);
+          for(let i=0;i<res.data.length;i++){
+          for(let j=0;j<this.groceryCategories.length;j++){
+
+            if(this.productCategory[i].title==this.groceryCategories[j].name){
+              this.productCategory[i].avatar_image=this.groceryCategories[j].source
+              console.log('Product_Res', res.data);
+            }
+          }
+        }
         }
       })
     } catch (error:any) {
@@ -36,12 +49,12 @@ export class CategoryComponent {
   }
 
   groceryCategories = [
-    {name:'Produce' , source:'assets/categories/produce.png',category: "fruits"},
-    {name:'Dairy and Eggs' ,category: "dairy&eggs", source:'/assets/categories/milk.jpg'},
-    {name:'Meat and Seafood' ,category: "meat&seafood", source:'/assets/categories/seafood.jfif'},
-    {name:'Bakery' ,category: "bakery&bread", source:'/assets/categories/bakery.png'},
-    {name:'Frozen Foods' , source:'/assets/categories/frozenfood.png'},
-    {name:'Beverages' ,category: "beverages", source:'/assets/categories/beverages.png'},
+    {name:'fruits' , source:'assets/categories/fruits.jpg',category: "fruits"},
+    {name:'dairy and eggs' ,category: "dairy&eggs", source:'/assets/categories/milk.jpg'},
+    {name:'meat and seafood' ,category: "meat&seafood", source:'/assets/categories/seafood.jfif'},
+    {name:'bakery and bread' ,category: "bakery&bread", source:'/assets/categories/bakery.png'},
+    {name:'vegetables' , source:'/assets/categories/vegetables.png'},
+    {name:'beverages' ,category: "beverages", source:'/assets/categories/beverages.png'},
     {name:'Pantry Staples' , source:'/assets/categories/party.png'},
     {name:'Snacks',category:"snacks&sweets" , source:'/assets/categories/snacks.png'},
     {name:'Deli' , source:'/assets/categories/deli.png'},

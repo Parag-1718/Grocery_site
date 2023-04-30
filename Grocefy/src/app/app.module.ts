@@ -16,6 +16,12 @@ import { TokenInterceptorService } from './shared/services/token-interceptor.ser
 // import { AppComponent } from './app.component';
 import { NgSpinKitModule } from 'ng-spin-kit';
 import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import {
+  NgxAwesomePopupModule,
+  DialogConfigModule,
+  ConfirmBoxConfigModule,
+  ToastNotificationConfigModule
+} from '@costlydeveloper/ngx-awesome-popup';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +40,10 @@ import { NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
       timeOut: 3000,
       positionClass: 'toast-bottom-center',
     }), // ToastrModule added
+    NgxAwesomePopupModule.forRoot(), // Essential, mandatory main module.
+        DialogConfigModule.forRoot(), // Needed for instantiating dynamic components.
+        ConfirmBoxConfigModule.forRoot(), // Needed for instantiating confirm boxes.
+        ToastNotificationConfigModule.forRoot() // Needed for instantiating toast notifications.
   ],
   providers: [
   {

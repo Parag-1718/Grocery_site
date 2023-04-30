@@ -4,16 +4,32 @@
 .bgImage img{
     width: 100vw;
     height: 15vh;
-    opacity: 5%;
+    opacity: 9%;
 font-family: 'Roboto Condensed', sans-serif;
 }
+
+/* .card{
+    width: 20%;
+
+} */
+/* .card-img-overlay{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+} */
+
+/* .card .p{
+    font-size: 20px;
+} */
 
 .bgImage p {
     color:#d1e7dd ;
 }
 .cardImage{
-    width: 100px;
-    height: 100px;
+    display: block;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
     cursor: pointer;
 }
 carousel{

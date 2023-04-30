@@ -14,7 +14,7 @@
       <label for="delivery my-3">Select Delivery Option:</label>
       <div class="form-group my-3 d-flex">
         <div class="form-check d-flex align-items-center" *ngFor="let option of deliveryOptions">
-          <input class="form-check-input mx-2 border-1 border-info" type="radio" id="{{option.tag}}" [value]="option.tag"
+          <input class="form-check-input mx-2" type="radio" id="{{option.tag}}" [value]="option.tag"
             (input)="getAddressId(option.id,option.tag)" formControlName="selectOption">
           <label class="form-check-label" for="{{option.tag}}">
 
@@ -42,7 +42,7 @@
       <div class="d-flex justify-content-around">
         <button class="btn btn-outline-danger my-3" [routerLink]="['/']"
           routerLinkActive="router-link-active">Cancel</button>
-        <button class="btn btn-outline-success my-3" routerLink="/module/cart/success" (click)="submit()"
+        <button class="btn btn-outline-success my-3" (click)="submit()"
           [disabled]="checkoutForm.invalid">Place order</button>
       </div>
     </form>

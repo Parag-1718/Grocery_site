@@ -106,6 +106,17 @@ export class ProductDetailsComponent {
       console.log("Encryption response :",res.data);
       this.newproduct.getProductById(res.data).subscribe((res:any)=>{
         console.log("product by id : ", res.data);
+        if (res.data) {
+          this.productData = res.data;
+            console.log('ProductData', res.data);
+            for(let j=0;j<this.groceryProducts.length;j++){
+    
+              if(this.productData.title==this.groceryProducts[j].name){
+                this.productData.avatar_image=this.groceryProducts[j].source
+                console.log('Product_---Res', res.data);
+              }
+            }
+          }
         this.productData = res.data
         this.productName = res.data.title
       })
@@ -135,4 +146,26 @@ export class ProductDetailsComponent {
       }
   }
 }
+
+groceryProducts = [
+  {name:'banana' , source:'/assets/products/banana.jpg'},
+  {name:'grapes', source:'/assets/products/grapes.jpg'},
+  {name:'apple', source:'/assets/products/apple.jpg'},
+  {name:'mango' , source:'/assets/products/mango.jpg'},
+  {name:'patato' , source:'/assets/products/patato.jpg'},
+  {name:'tomato', source:'/assets/products/tomato.jpg'},
+  {name:'spring onion' , source:'/assets/products/spring onion.jpg'},
+  {name:'cookies', source:'/assets/products/cookies.jpg'},
+  {name:'bread' , source:'/assets/products/bread.jpg'},
+  {name:'biscuits' , source:'/assets/products/biscuits.jpg'},
+  {name:'amul taza' , source:'/assets/products/amul taza.jpg'},
+  {name:'bournvita' , source:'/assets/products/bournvita.jpg'},
+  {name:'almond' , source:'/assets/products/almond.jpg'},
+  {name:'eggs' , source:'/assets/products/eggs.jpg'},
+  {name:'meat' , source:'/assets/products/meat.jpg'},
+  {name:'dry seafood' , source:'/assets/products/dry fish.jpg'},
+  {name:'thums up' , source:'/assets/products/thumps up.jpg'},
+  {name:'beer' , source:'/assets/products/beer.jpg'},
+
+];
 }

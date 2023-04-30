@@ -34,7 +34,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let cart of cartData;let i=index">
-                <td> <img src="assets/products/cake.jfif" alt="Products"> - {{cart.title}}</td>
+                <td> <img src="{{cart.avatar_image}}" alt="Products" routerLink="/module/catalogue/product-details/{{cart.id}}">   {{cart.short_description}}</td>
                 <td>{{cart.amount |currency:'INR' }} </td>
                 <td>
                     <div>

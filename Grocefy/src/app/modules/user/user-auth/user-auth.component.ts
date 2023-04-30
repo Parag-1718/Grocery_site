@@ -65,6 +65,8 @@ export class UserAuthComponent {
   }
 
   singUP(data: SingUp) {
+    this.userSingUp.markAllAsTouched()
+
     console.log(data);
     this.user.userSingUpToDb(data).subscribe(
       (res: any) => {
@@ -87,6 +89,8 @@ export class UserAuthComponent {
   }
 
   login(data: userLogin) {
+    this.userLogin.markAllAsTouched()
+    
     console.log(data);
     this.user.loginToDb(data).subscribe((res:any)=>{
       if(res){

@@ -24,8 +24,8 @@ export class CheckOutComponent {
 
     //#region 
     addressEncryption!:string;
-    orderStatus = "W4YV_pkH7OAkvZO4P1gbzA=="
-    paymentStatus = "W4YV_pkH7OAkvZO4P1gbzA=="
+    orderStatus = "9htZqKFcgoVKuq2rxtHzZA=="
+    paymentStatus = "9htZqKFcgoVKuq2rxtHzZA=="
     setlectedAddressTag:string = ''
     checkoutForm! : FormGroup;
 
@@ -71,6 +71,8 @@ export class CheckOutComponent {
   }
 
   submit(){
+    this.checkoutForm.markAllAsTouched()
+
     let data1 = this.Cart.getCartData();
     console.log("cartData",data1);
 
@@ -90,7 +92,7 @@ export class CheckOutComponent {
     console.log("order products",order_product);
 
     const currentDate = new Date()
-    const ordderDate = currentDate.toLocaleString()
+    const ordderDate = currentDate
     const futureDate = new Date(ordderDate)
     futureDate.setDate(futureDate.getDate() + 5);
 
@@ -101,7 +103,7 @@ export class CheckOutComponent {
     let data = {
       order_date: ordderDate,
       special_note: "its special",
-      estimate_delivery_date: futureDate.toLocaleString(),
+      estimate_delivery_date: futureDate,
       sub_total: orderAmount.sub_total,
       tax_amount: orderAmount.tax_amount,
       discount_amount: orderAmount.discount_amount,
@@ -113,12 +115,12 @@ export class CheckOutComponent {
     }
 
     console.log(data);
-
+    
     this.Order.addOrder(data,this.addressEncryption,this.addressEncryption,this.paymentStatus,this.orderStatus).subscribe((res:any)=>{
       console.log("order response...", res);
       this.toast.success(res.message)
       localStorage.setItem("orderId",res.data.id)
-      // this.router.navigate(['/module/cart/success'])
+      this.router.navigate(['/module/cart/success'])
     }, err=>{
       console.log(err);
       this.toast.error(err.error.message)

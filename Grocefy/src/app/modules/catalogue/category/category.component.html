@@ -1,15 +1,27 @@
+<!-- 
+<div class="card border-0 mt-3 bgImage">
+  <img src="assets/product_list_background.jpg" class="card-img">
+  <div class="card-img-overlay text-center my-3 d-flex justify-content-center align-items-center">
+      <div>
+          <p id="product_list_text" class="card-title fs-1 text-capitalize">categories</p>
+      </div>
+  </div>
+</div> -->
+
 <!-- navigation bar  -->
+<div class="container-fluid">
+
 <nav class="d-flex flex-wrap text-dark container my-5  justify-content-around">
     <div class="">
-        <a class="navbar-brand fs-5 fw-semibold" routerLink="/module/catalogue/product-list">Explore Cetegories</a>
+        <a class="navbar-brand fs-5 fw-semibold" routerLink="/module/catalogue/category">Explore Cetegories</a>
     </div>
     <div class="text-capitalize">
         <ul class="d-inline-flex">
             <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list">all</a></li>
-            <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/1">Vegetables</a></li>
-            <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/2">Fruits</a></li>
-            <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/3">Coffe And Teas</a></li>
-            <li class="mx-2 a_style"><a class="nav-link" routerLink="//module/catalogue/product-list/4">Meat</a></li>
+            <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/2">Vegetables</a></li>
+            <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/1">Fruits</a></li>
+            <li class="mx-2 a_style"><a class="nav-link" routerLink="/module/catalogue/product-list/4">Coffe And Teas</a></li>
+            <li class="mx-2 a_style"><a class="nav-link" routerLink="//module/catalogue/product-list/5">Meat</a></li>
         </ul>
     </div>
 </nav>
@@ -26,9 +38,11 @@
 
 <carousel class="my-5" [cellWidth]="250" [height]="320" [margin]="30"[arrowsTheme]="'dark'">
     <div class="card carousel-cell " *ngFor="let item of productCategory" >
-     <img src='../../../../assets/categories/produce.png' class="card-img-top" alt="Category images" routerLink="/module/catalogue/product-list/{{item.id}}"/>
+     <img src='{{item.avatar_image}}' class="card-img-top" alt="Category images" routerLink="/module/catalogue/product-list/{{item.id}}"/>
       <div class="card-body">
-        <p class="card-text text-center">{{item.title}}</p>
+        <p class="card-text text-center">{{item.title | titlecase}}</p>
       </div>
     </div>
 </carousel>
+</div>
+

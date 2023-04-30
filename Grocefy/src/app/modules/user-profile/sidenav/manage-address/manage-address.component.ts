@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse, HttpResponse } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { ConfirmBoxInitializer, DialogLayoutDisplay } from '@costlydeveloper/ngx-awesome-popup';
 import { ToastrService } from 'ngx-toastr';
 import { catchError, tap, throwError } from 'rxjs';
 import { Address, addProduct } from 'src/app/shared/data-type';
@@ -56,6 +57,8 @@ export class ManageAddressComponent {
   }
 
   add(data:Address){
+    this.manageAddressForm.markAllAsTouched()
+
     //  console.log(data);
     // try {
     //   this.user.addAddress(data).subscribe((res:any)=>{
@@ -108,6 +111,8 @@ export class ManageAddressComponent {
   }
 
   onUpdate(data:any){
+    this.manageAddressForm.markAllAsTouched()
+
      console.log("id",this.encryptionCode);
      console.log("data",data);
 
@@ -129,6 +134,22 @@ export class ManageAddressComponent {
   }
 
   removeAddressWithEncryption(id:any){
+  const confirmBox = new ConfirmBoxInitializer();
+  confirmBox.setTitle('Are you sure?');
+  confirmBox.setMessage('Do you want to Delete?');
+  confirmBox.setButtonLabels('DELETE', 'NO');
+
+  // Choose layout color type
+  confirmBox.setConfig({
+    layoutType: DialogLayoutDisplay.WARNING, // SUCCESS | INFO | NONE | DANGER | WARNING
+  });
+
+  // Simply open the popup and listen which button is clicked
+  confirmBox.openConfirmBox$().subscribe((resp:any) => {
+    // IConfirmBoxPublicResponse
+    console.log('Clicked button response: ', resp);
+
+    if(resp.success){
      this.encryptionService.encryption(id).pipe(tap((res:any)=>{
       console.log("Encryption response", res);
       let Encrypted_code = res.data;
@@ -139,6 +160,8 @@ export class ManageAddressComponent {
         this.toast.error(err.error.message)
       })
      })).subscribe()
+  }
+})
   }
 
   }

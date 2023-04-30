@@ -22,3 +22,7 @@ input, textarea{
     border-radius: 0px;
     background-color: aliceblue;
 }
+
+input.ng-touched.ng-invalid{
+    box-shadow: rgba(248, 3, 3, 0.35) 0px 5px 15px;
+}

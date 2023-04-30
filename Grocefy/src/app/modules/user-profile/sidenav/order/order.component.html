@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <h2>Orders</h2>
   <table class="table table-striped">
     <thead>
@@ -24,4 +24,53 @@
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
+
+<mat-accordion class="row g-10 m-lg-5 d-flex justify-content-center">
+  <mat-expansion-panel *ngFor="let arr of orders; let i = index">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <img
+          src="/assets/delivey.jpg"
+        />
+        <small class="m-2 text-muted">Complete</small>
+        <div class="vl"></div>
+        <small class="text-muted">Order Date: <strong> {{ arr.order_date | date }}</strong></small>
+        <div class="vl"></div>
+      </mat-panel-title>
+      <mat-panel-description>
+        <small class="mx-2"
+          >Estimate Delivered Date: <strong>{{ arr.estimate_delivery_date |date}}</strong></small
+        >
+        <div class="vl"></div>
+        <hr>
+        <small class="mx-2">Order Amount: RS <strong>{{ arr.paid_amount | currency:"INR" }}</strong></small>
+        <div class="vl"></div>
+        <span class="mx-2"> Items({{ arr.order_items.length }})</span>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">No.</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Product Amount</th>
+          <th scope="col">Discount Amount</th>
+          <th scope="col">Total Product Amount</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let item of arr.order_items; let i = index">
+          <th scope="row">{{ i + 1 }}</th>
+          <td>{{ item.product_name }}</td>
+          <td>{{ item.qty }}</td>
+          <td>{{ item.product_amount | currency:"INR"}}</td>
+          <td>{{ item.discount_amount | currency:"INR"}}</td>
+          <td>{{ item.product_amount * item.qty | currency:"INR"}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div></div>
+  </mat-expansion-panel>
+</mat-accordion>

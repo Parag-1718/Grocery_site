@@ -1,5 +1,6 @@
 import { Component, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
+import { ConfirmBoxInitializer, DialogLayoutDisplay } from '@costlydeveloper/ngx-awesome-popup';
 import { addProduct, cart } from 'src/app/shared/data-type';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { ProductService } from 'src/app/shared/services/product.service';
@@ -32,6 +33,7 @@ export class MyCartComponent {
     this.cartData = this.cart.getCartData();
     let amount = 0
 
+    console.log(this.cartData);
       this.cartData.forEach((item:any)=>{
         if(item.quantity){
           amount = amount + (item.amount * item.quantity)
@@ -75,10 +77,29 @@ export class MyCartComponent {
     }
 
     removeItem(product:addProduct){
+
+      const confirmBox = new ConfirmBoxInitializer();
+      confirmBox.setTitle('Are you sure?');
+      confirmBox.setMessage('Do you want to Delete?');
+      confirmBox.setButtonLabels('DELETE', 'NO');
+    
+      // Choose layout color type
+      confirmBox.setConfig({
+        layoutType: DialogLayoutDisplay.WARNING, // SUCCESS | INFO | NONE | DANGER | WARNING
+      });
+    
+      // Simply open the popup and listen which button is clicked
+      confirmBox.openConfirmBox$().subscribe((resp:any) => {
+        // IConfirmBoxPublicResponse
+        console.log('Clicked button response: ', resp);
+    
+        if(resp.success){
+
       this.cart.removeItemToCart(product);
       this.getCartData();
-    }
-
+        }
+    })
+  }
     storeAmout(){
       const summary = {
         sub_total: this.subtotal,
@@ -90,8 +111,10 @@ export class MyCartComponent {
       localStorage.setItem("summary",JSON.stringify(summary))
       this.router.navigate(["/module/cart/checkout"])
     }
+  }
+  
 
-}
+
 
   // delCartData(id:number) {
   //   this.cart.removeCart(id)

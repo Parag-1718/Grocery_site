@@ -18,7 +18,8 @@ import { AuthInterceptor } from 'src/app/auth.interceptor';
     CommonModule,
     UserRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    
   ],
   providers:[
     {

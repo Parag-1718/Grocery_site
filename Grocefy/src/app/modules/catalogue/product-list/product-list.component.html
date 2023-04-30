@@ -41,11 +41,11 @@
         <div class="card my-4 mx-4">
             <img src="{{item.product.avatar_image}}" class="card-img-top cardImage" alt="Grocery item image" [routerLink]="['/module/catalogue/product-details',item.product_id]">
             <div class="card-body">
-                <div style="width:200px;"><p> {{item.product.title}} </p></div>
+                <div style="width:200px;"><p class="card-title fs-5"> {{item.product.title | titlecase}}</p></div>
+                <p class="card-text">{{item.product.short_description}}</p>
                 <p class="card-text">Price: {{item.product.amount | currency:"INR"}} </p>
-                <p class="card-text">Category: {{item.category_id}}</p>
-                <p class="card-text">In stock: Yes</p>
-                <a class="btn btn-primary" (click)="addToCart(item.product_id)">Add to cart</a>
+                <p class="card-text">Discount: {{item.product.discount_amount | currency:'INR'}}</p>
+                <a class="btn btn-outline-primary" (click)="addToCart(item.product_id)">Add to cart</a>
             </div>
         </div>
 
@@ -61,11 +61,11 @@
         <div class="card my-4 mx-4">
             <img src="{{item.avatar_image}}" class="card-img-top cardImage" alt="Grocery item image" [routerLink]="['/module/catalogue/product-details',item.id]">
             <div class="card-body">
-                <div style="width:200px;"><p> {{item.title}} </p></div>
-                <p class="card-text">Price: {{item.amount | currency:"INR"}} </p>
+                <div style="width:200px;"><p class="card-title fs-5"> {{item.title | titlecase}} </p></div>
                 <p class="card-text">{{item.short_description}}</p>
-                <p class="card-text">In stock: Yes</p>
-                <a class="btn btn-primary" (click)="addToCart(item.id)">Add to cart</a>
+                <p class="card-text">Price: {{item.amount | currency:"INR"}} </p>
+                <p class="card-text">Discount: {{item.discount_amount |currency:"INR"}} </p>
+                <a class="btn btn-outline-primary" (click)="addToCart(item.id)">Add to cart</a>
             </div>
         </div>
 

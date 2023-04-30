@@ -4,6 +4,7 @@ import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
 import { UserService } from '../../services/user.service';
 import { MyCartComponent } from 'src/app/modules/cart/my-cart/my-cart.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +20,7 @@ export class HeaderComponent {
   cartTotal = 0
   //#endregion
 
-  constructor( private router:Router, private product:ProductService, private cart:CartService, private user:UserService){}
+  constructor( private router:Router, private product:ProductService, private cart:CartService, private user:UserService,private toastr:ToastrService){}
 
   ngOnInit(){
 
@@ -59,7 +60,8 @@ export class HeaderComponent {
     localStorage.removeItem('current')
     localStorage.removeItem('orderId')
     this.menuType = 'deafult',
-    this.cartItems = 0
+    this.cartItems = 0;
+    this.toastr.success("Logout Successfully!!!")
    }
 
   getCartItemsLength(){

@@ -40,11 +40,11 @@ export class ProfileComponent {
     this.userProfileForm = new FormGroup({
       first_name: new FormControl(null, [
         Validators.required,
-        this.noSpaceAllowed,
+        // this.noSpaceAllowed,
       ]),
       last_name: new FormControl(null, [
         Validators.required,
-        this.noSpaceAllowed,
+        // this.noSpaceAllowed,
       ]),
       primary_mobile_number: new FormControl(null, [
         Validators.required,
@@ -80,7 +80,7 @@ export class ProfileComponent {
   }
 
   save(data:object){
-    // this.userProfileForm.markAllAsTouched()
+    this.userProfileForm.markAllAsTouched()
      console.log(data);
      this.user.updateProfiile(data).subscribe((res:any)=>{
       if(res){
